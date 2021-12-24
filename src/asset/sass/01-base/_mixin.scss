@@ -1,0 +1,15 @@
+/*---------------------------------
+  mixin
+---------------------------------*/
+
+@mixin tab {
+    @media (min-width:($tab)) {
+        @content;
+    }
+}
+
+@mixin pc {
+    @media (min-width:($pc)) {
+        @content;
+    }
+}

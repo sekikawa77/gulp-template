@@ -1,0 +1,12 @@
+/*---------------------------------
+  fonts
+---------------------------------*/
+@font-face {
+    font-family: 'hoge';
+    src: url(../fonts/hoge.ttf) format('truetype');
+    src: url(../fonts/hoge.woff) format('woff')
+}
+
+.hoge {
+    font-family: 'hoge', sans-serif;
+}
