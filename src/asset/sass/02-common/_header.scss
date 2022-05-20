@@ -2,14 +2,10 @@
   header
 ---------------------------------*/
 .header {
-    background-color: #ccc;
-    display: flex;
 
     @include tab {
-      background-color: #ff0;
     }
 
     @include pc {
-      background-color: #00f;
     }
 }
