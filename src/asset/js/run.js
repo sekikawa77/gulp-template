@@ -100,7 +100,7 @@
 
     // メディアクエリのイベントセット
     (function () {
-        var mediaQueryList = window.matchMedia('(max-width: 599px)');
+        var mediaQueryList = window.matchMedia('(max-width: 767px)');
 
         // イベントリスナの定義
         function mediaChange(mql) {
