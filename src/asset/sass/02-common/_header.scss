@@ -2,10 +2,45 @@
   header
 ---------------------------------*/
 .header {
+	position: relative;
 
     @include tab {
     }
 
     @include pc {
     }
+
+	> .inner {
+		display: flex;
+		justify-content: flex-end;
+	}
+}
+
+.sp__btn {
+	border: none;
+	background: #ccc;
+	width: 40px;
+	height: 40px;
+	cursor: pointer;
+
+	@include tab {
+		display: none;
+    }
+}
+
+.header__gnav {
+	display: none;
+	position: absolute;
+	top: 60px;
+	left: 0;
+
+	@include tab {
+		display: block;
+		position: static;
+		width: 100%;
+    }
+}
+
+.box {
+	height: 1000px;
 }

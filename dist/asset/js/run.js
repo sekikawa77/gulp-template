@@ -7,12 +7,14 @@
     var $doc = $(document);
     var $body = $('body');
     var scrollElement = $(document.scrollingElement || /* IE */ $('html'));
-    
+
+
+
     //sp-navi
     $(function(){
         var $header = $('.header');
         var $headerButton = $('.sp__btn');
-        var $globalNavigation = $('.globalnavigation');
+        var $globalNavigation = $('.header__gnav');
         var isActive = 'is-active';
         var isOpen = 'is-open';
         var flag = false;
@@ -20,7 +22,7 @@
 
         $headerButton.on('click', function () {
             var $this = $(this);
-    
+
             if (flag === false) {
                 $body.addClass(isActive);
                 $globalNavigation.addClass(isOpen).slideDown();
@@ -34,14 +36,13 @@
 
                 flag = false;
             }
-            
+
         });
 
- 
-        // $('.header__gnav__sp a[href]').on('click', function (event) {
-        //     $headerButton.trigger('click');
-        // });
-
+        $('.header__gnav a[href^="#"]').on('click', function (event) {
+            flag = true;
+			$headerButton.trigger('click');
+        });
 
         $win.on('customMatchMedia', function (event, bool) {
             if (!bool) {
@@ -49,7 +50,7 @@
                 $body.removeClass(isActive);
                 $globalNavigation.removeAttr('style').removeClass(isOpen);
                 $headerButton.removeClass(isActive).closest($header).removeClass(isActive);
-            } 
+            }
         });
     });
 
@@ -76,7 +77,7 @@
         var isActive = 'is-active';
 
         $pagetop.hide();
-        
+
         // 1000px スクロールしたらボタン表示
         $(window).scroll(function () {
             if ($(this).scrollTop() > 500) {
