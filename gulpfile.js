@@ -12,7 +12,7 @@ const notify = require('gulp-notify');
 const imagemin = require('gulp-imagemin');
 const mozjpeg = require('imagemin-mozjpeg');
 const pngquant = require('imagemin-pngquant');
-const changed = require('gulp-changed'); 
+const changed = require('gulp-changed');
 const browserSync = require('browser-sync');
 
 gulp.task('pug', function(done){

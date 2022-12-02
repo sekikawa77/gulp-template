@@ -9,16 +9,20 @@
     var scrollElement = $(document.scrollingElement || /* IE */ $('html'));
 
 
+	// var image = document.getElementsByClassName('thumbnail');
+	// new simpleParallax(image, {
+	// 	scale: 3,
+	// 	orientation: 'down'
+	// });
 
     //sp-navi
-    $(function(){
+    (function () {
         var $header = $('.header');
         var $headerButton = $('.sp__btn');
         var $globalNavigation = $('.header__gnav');
         var isActive = 'is-active';
         var isOpen = 'is-open';
         var flag = false;
-
 
         $headerButton.on('click', function () {
             var $this = $(this);
@@ -39,10 +43,10 @@
 
         });
 
-        $('.header__gnav a[href^="#"]').on('click', function (event) {
-            flag = true;
-			$headerButton.trigger('click');
-        });
+        // $('.header__gnav a[href^="#"]').on('click', function (event) {
+        //     flag = true;
+		// 	$headerButton.trigger('click');
+        // });
 
         $win.on('customMatchMedia', function (event, bool) {
             if (!bool) {
@@ -52,7 +56,7 @@
                 $headerButton.removeClass(isActive).closest($header).removeClass(isActive);
             }
         });
-    });
+    }());
 
     // smooth scroll
     (function () {
@@ -60,7 +64,7 @@
 
         $('a[href^="#"]').click(function(){
             var href= $(this).attr("href");
-
+			console.log('aaa');
             var target = $(href == "#" || href == "" ? 'html' : href);
             var position = target.offset().top;
 
