@@ -3,29 +3,23 @@
 (function ($, window, document) {
     'use strict';
 
-    var $win = $(window);
-    var $doc = $(document);
-    var $body = $('body');
-    var scrollElement = $(document.scrollingElement || /* IE */ $('html'));
-
-
-	// var image = document.getElementsByClassName('thumbnail');
-	// new simpleParallax(image, {
-	// 	scale: 3,
-	// 	orientation: 'down'
-	// });
+    const $win = $(window);
+    const $doc = $(document);
+    const $body = $('body');
+    const scrollElement = $(document.scrollingElement || /* IE */ $('html'));
 
     //sp-navi
     (function () {
-        var $header = $('.header');
-        var $headerButton = $('.sp__btn');
-        var $globalNavigation = $('.header__gnav');
-        var isActive = 'is-active';
-        var isOpen = 'is-open';
-        var flag = false;
+        const $header = $('.header');
+        const $headerButton = $('.sp__btn');
+        const $globalNavigation = $('.header__gnav');
+        const isActive = 'is-active';
+        const isOpen = 'is-open';
+        let flag = false;
+
 
         $headerButton.on('click', function () {
-            var $this = $(this);
+            const $this = $(this);
 
             if (flag === false) {
                 $body.addClass(isActive);
@@ -60,13 +54,12 @@
 
     // smooth scroll
     (function () {
-        //var headerHeight = 120;
+        //const headerHeight = 120;
 
         $('a[href^="#"]').click(function(){
-            var href= $(this).attr("href");
-			console.log('aaa');
-            var target = $(href == "#" || href == "" ? 'html' : href);
-            var position = target.offset().top;
+            const href= $(this).attr("href");
+            const target = $(href == "#" || href == "" ? 'html' : href);
+            const position = target.offset().top;
 
             $("html, body").animate({scrollTop:position}, 550, "swing");
                return false;
@@ -76,9 +69,9 @@
 
     // totop
     (function () {
-        var $pagetop = $('.totop');
-        var $footer = $('.footer');
-        var isActive = 'is-active';
+        const $pagetop = $('.totop');
+        const $footer = $('.footer');
+        const isActive = 'is-active';
 
         $pagetop.hide();
 
@@ -90,9 +83,9 @@
                 $pagetop.fadeOut();
             }
 
-            var scrollHeight = $doc.height();
-            var scrollPosition = $win.height() + $win.scrollTop();
-            var footHeight = $footer.innerHeight();
+            const scrollHeight = $doc.height();
+            const scrollPosition = $win.height() + $win.scrollTop();
+            const footHeight = $footer.innerHeight();
 
             if (scrollHeight - scrollPosition <= footHeight) {
                 $pagetop.addClass(isActive);
@@ -105,7 +98,7 @@
 
     // メディアクエリのイベントセット
     (function () {
-        var mediaQueryList = window.matchMedia('(max-width: 767px)');
+        const mediaQueryList = window.matchMedia('(max-width: 767px)');
 
         // イベントリスナの定義
         function mediaChange(mql) {
