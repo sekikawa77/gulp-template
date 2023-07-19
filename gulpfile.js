@@ -64,10 +64,10 @@ gulp.task('imagemin', function(done){
     .pipe(
         imagemin([
             pngquant({
-                quality: [.60, .70],
+                quality: [.70, .85],
                 speed: 1
             }),
-            mozjpeg({ quality: 65}),
+            mozjpeg({ quality: 8}),
             imagemin.svgo(),
             imagemin.optipng(),
             imagemin.gifsicle({ optimizationLevel: 3})
