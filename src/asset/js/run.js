@@ -149,6 +149,26 @@
 
     }());
 
+    //scrollしたらclassを付与
+    (function () {
+
+        let jsAnime = function(){
+            $('.js-anime').each(function(){
+                let position = $(this).offset().top;
+                let scroll = $win.scrollTop();
+                let winheight = $win.height();
+    
+                if(scroll > position - winheight) {
+                    $(this).addClass('is-active');
+                }
+            });
+        };
+
+
+        $win.on('scroll, load', function(){
+            jsAnime();
+        });
+    }());
     // totop
     (function () {
         const $pagetop = $('.totop');

@@ -10,6 +10,7 @@
     }
 }
 .gallery {
+	margin: 100px 0;
 	display: flex;
 	gap: 20px;
 	flex-wrap: wrap;
@@ -20,6 +21,7 @@
 }
 
 .flex__wrap {
+	margin: 100px 0;
 	display: flex;
 	max-width: 900px;
 	background-color: #eeee;
@@ -40,6 +42,7 @@
 }
 
 .grid {
+	margin: 100px 0;
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
 	gap: 20px;

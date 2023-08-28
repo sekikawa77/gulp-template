@@ -1,0 +1,15 @@
+// ==============================
+// 表示アニメーション
+// ==============================
+.js-anime {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(50px);
+    transition: 1s;
+
+    &.is-active {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+}
