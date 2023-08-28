@@ -8,10 +8,15 @@
 @import '02-common/header';
 @import '02-common/footer';
 
+@import '03-plugin/slick';
+@import '03-plugin/slick-theme';
+@import '03-plugin/magnific-popup';
+
 @import '04-modules/hdg';
 @import '04-modules/form';
 @import '04-modules/btn';
 @import '04-modules/list';
 @import '04-modules/box';
+@import '04-modules/modal';
 
 @import '05-page/top';
