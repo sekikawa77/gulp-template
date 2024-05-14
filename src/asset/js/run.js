@@ -1,4 +1,19 @@
+const container = document.querySelector('.scroll_container');
+const list_wrap = document.querySelector('.scroll_wrap');
 
+gsap.to(list_wrap, {
+  x: () => -(list_wrap.clientWidth -  container.clientWidth),
+  ease: 'none',
+  scrollTrigger: {
+    trigger: '.scroll',
+    start: 'top top',
+    end: () => (list_wrap.clientWidth - container.clientWidth),
+    scrub: true,
+    pin: true,
+    anticipatePin: 1,
+    invalidateOnRefresh: true
+  }
+});
 
 
 
@@ -149,6 +164,41 @@
 
     }());
 
+    (function () {
+        const $target = $('.target__item');
+        const position = $target.offset().top;
+        const winHeight = $win.height();
+        const position2 = position - winHeight;
+        console.log(position);
+        console.log(winHeight);
+        console.log(position2);
+        // function scrollanime (){
+
+   
+        //     $target.each(function(){
+        //         const $target = $(this);
+        //         const position = $target.offset().top;
+
+        //         // console.log(position);
+        //     });
+        // };
+
+
+        // $win.on('scroll', function(){
+        //     scrollanime();
+        // });
+
+        $win.on('scroll', function(){
+            let scroll = $(this).scrollTop();
+
+            console.log(scroll);
+
+            if(scroll > position2) {
+                $target.addClass('is-active');
+            }
+        });
+    }());
+
     //scrollしたらclassを付与
     (function () {
 
@@ -157,7 +207,8 @@
                 let position = $(this).offset().top;
                 let scroll = $win.scrollTop();
                 let winheight = $win.height();
-    
+
+                // この要素のスクロール位置 - ウインドウの縦幅
                 if(scroll > position - winheight) {
                     $(this).addClass('is-active');
                 }
@@ -165,7 +216,11 @@
         };
 
 
-        $win.on('scroll, load', function(){
+        $win.on('scroll', function(){
+            jsAnime();
+        });
+
+        $win.on('load', function(){
             jsAnime();
         });
     }());
@@ -203,11 +258,11 @@
         const isActive = 'is-active';
         
         $('.tab__btn > li').on('click', function() {
-            $('.tab__btn > li, .panel').removeClass(isActive);
-          
-            $(this).addClass(isActive);
-             
             var index = $('.tab__btn > li').index(this);
+            $(this).addClass(isActive).siblings('li').removeClass(isActive);
+            
+            $(this).parents().next().children().removeClass(isActive);
+
             $('.panel').eq(index).addClass(isActive);
           });
 
@@ -233,10 +288,9 @@
         function mediaChange(mql) {
             // カスタムイベントを呼び出す
             $win.trigger('customMatchMedia', [mql.matches]);
-            console.log(mql);
         }
         // MediaQueryListにイベントリスナを登録
-        mediaQueryList.addEventListener('load', mediaChange);
+        mediaQueryList.addEventListener('change', mediaChange);
 
         // 初期状態の評価のためイベントリスナを一度実行
         mediaChange(mediaQueryList);

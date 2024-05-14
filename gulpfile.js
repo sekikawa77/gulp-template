@@ -49,8 +49,8 @@ gulp.task('sass', function(done){
 gulp.task('js', function(done){
     gulp.src(['src/asset/js/**/*.js', '!dist/asset/js/**/*.min.js'])
     .pipe(plumber())
-    .pipe(uglify())
-    .pipe(rename({extname: '.min.js'}))
+    //.pipe(uglify())
+    //.pipe(rename({extname: '.min.js'}))
     .pipe(gulp.dest('./dist/asset/js'))
     .pipe(browserSync.stream());
 
@@ -67,7 +67,7 @@ gulp.task('imagemin', function(done){
                 quality: [.70, .85],
                 speed: 1
             }),
-            mozjpeg({ quality: 8}),
+            mozjpeg({ quality: 90}),
             imagemin.svgo(),
             imagemin.optipng(),
             imagemin.gifsicle({ optimizationLevel: 3})

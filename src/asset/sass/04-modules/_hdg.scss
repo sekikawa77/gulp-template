@@ -1,3 +1,52 @@
 /*---------------------------------
   hdg
 ---------------------------------*/
+.about {
+  margin-top: 1000px;
+}
+
+.hdg__lv2__01 {
+
+  text-align: center;
+
+  &.js-anime {
+    &.is-active {
+      > .wrap {
+        > .text {
+          animation: textclip 3s linear forwards;
+        }
+      }
+
+    }
+  }
+
+  > .wrap {
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+
+    > .text {
+      font-size: 4rem;
+      color: transparent;
+      position: relative;
+
+
+      background: linear-gradient(to right, rgba(120,151,179,1) 0%,rgba(188,203,217,1) 100%);
+      background-clip: text;
+
+      background-size: 200%;
+      letter-spacing: .2em;
+      line-height: 1;
+      display: block;
+    }
+  }
+  
+
+}
+
+@keyframes textclip {
+  100% {
+    color: #7897B3;
+    background-position: -200% 0;
+  }
+}
