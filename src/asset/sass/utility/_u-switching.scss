@@ -1,0 +1,36 @@
+@use '../foundation/mixin';
+/*---------------------------------
+  top
+---------------------------------*/
+
+.u-sp {
+  display: block;
+
+  @include mixin.tab {
+      display: none;
+  }
+}
+
+.u-tab {
+  display: none;
+
+  @include mixin.tab {
+      display: block;
+  }
+}
+
+.u-pc {
+  display: none;
+
+  @include mixin.pc {
+      display: block;
+  }
+}
+
+.u-pc-none {
+  display: block;
+
+  @include mixin.pc {
+      display: none;
+  }
+}

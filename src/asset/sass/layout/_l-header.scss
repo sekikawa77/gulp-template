@@ -1,0 +1,74 @@
+@use '../foundation/mixin';
+/*---------------------------------
+  header
+---------------------------------*/
+.l-header {
+	position: relative;
+	background-color: #ccc;
+
+    @include mixin.tab {
+    }
+
+    @include mixin.pc {
+    }
+
+	> .l-inner {
+		display: flex;
+		justify-content: flex-end;
+	}
+}
+
+
+.sp__btn {
+	border: none;
+	background: #000;
+	width: 40px;
+	height: 40px;
+	cursor: pointer;
+	position: relative;
+
+	@include mixin.tab {
+		display: none;
+    }
+
+	&::before,
+	&::after {
+		content: "";
+	}
+
+	> span,
+	&::before,
+	&::after {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		translate: -50% -50%;
+		width: 30px;
+		height: 2px;
+		background-color: #fff;
+	}
+
+	&::before {
+		top: calc(50% - 8px);
+	}
+
+	&::after {
+		top: calc(50% + 8px);
+	}
+}
+
+.l-header__gnav {
+	display: none;
+	position: absolute;
+	top: 60px;
+	left: 0;
+	background-color: #ddd;
+	width: 100%;
+
+	@include mixin.tab {
+		display: block;
+		position: static;
+		width: 100%;
+    }
+}
+

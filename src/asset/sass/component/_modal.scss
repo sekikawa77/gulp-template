@@ -1,0 +1,156 @@
+@use '../foundation/mixin';
+// ==============================
+// モーダル
+// ==============================
+/* magnific-popup
+---------------------------------*/
+.mfp-zoom-out-cur {
+    .mfp-wrap {
+        &.mfp-ready {
+            .mfp-content {
+                opacity: 1;
+            }
+        }
+
+        .mfp-content {
+            opacity: 0;
+            transition: all 0.3s ease-out;
+        }
+
+        img.mfp-img {
+            padding: 0;
+        }
+
+        .mfp-container {
+            max-width: 600px;
+            right: 0;
+            margin: 0 auto;
+            padding: 30px;
+
+            .mfp-figure {
+                &::after {
+                    top: 0;
+                    bottom: 0;
+                }
+            }
+            .mfp-close {
+                color: transparent;
+                cursor: pointer;
+                width: 35px;
+                height: 35px;
+                position: absolute;
+                top: -40px;
+                right: 0;
+
+                &::before,
+                &::after {
+                    content: "";
+                    width: 35px;
+                    height: 2px;
+                    background-color: rgba(255,255,255, 0.8);
+                    position: absolute;
+                    right: 0;
+                    top: 10px;
+                }
+
+                &::before {
+                    transform: rotate(-45deg);
+                }
+
+                &::after {
+                    transform: rotate(45deg);
+                }
+            }
+
+            button {
+                &.mfp-arrow {
+                    width: 54px;
+                    height: 54px;
+                    margin-top: -27px;
+                    opacity: 1;
+
+                    &:hover {
+                        &::before {
+                            background: #fff;
+                        }
+                    }
+
+                    &.mfp-arrow-right {
+                        right: 10px;
+
+                        @media screen and (min-width:1200px) {
+                            right: 7px;
+                        }
+
+                        &::after {
+                            left: 15px;
+                            border-top: 2px solid #005780;
+                            border-right: 2px solid #005780;
+                        }
+                    }
+
+                    &.mfp-arrow-left {
+                        left: 10px;
+
+                        @media screen and (min-width:1200px) {
+                            left: 7px;
+                        }
+
+                        &::after {
+                            left: 22px;
+                            border-bottom: 2px solid #005780;
+                            border-left: 2px solid #005780;
+                        }
+                    }
+
+                    &::before {
+                        border: none;
+                        width: 54px;
+                        height: 54px;
+                        border-radius: 50%;
+                        background-color: rgba(255,255,255, 0.9);
+                        margin: 0;
+                        opacity: 1;
+                    }
+
+                    &::after {
+                        margin: 0;
+                        border: none;
+                        position: absolute;
+                        top: 50%;
+                        transform: translateY(-50%) rotate(45deg);
+                        width: 15px;
+                        height: 15px;
+                    }
+                }
+            }
+        }
+    }
+
+    .mfp-counter {
+        right: 20px;
+    }
+
+    /* mfp-bg（overlay） */
+    .mfp-bg {
+        opacity: 0;
+        transition: all 0.3s ease-out;
+
+        &.mfp-ready {
+            opacity: 0.8;
+        }
+    }
+}
+
+.mfp-img {
+    animation: 1s mfp_fade;
+}
+
+@keyframes mfp_fade {
+      0% {
+            opacity: 0;
+      }
+      100% {
+            opacity: 1;
+      }
+}

@@ -1,0 +1,33 @@
+- var title = '下層ページ'
+- var description = '下層ページのディスクリプション'
+- var keywords = '下層ページのキーワード'
+- var url = '/works/'
+
+doctype html
+html(lang='ja')
+	head
+		include ../asset/inc/_head
+		meta(name='description' content='')
+
+	body
+
+		include ../asset/inc/_header
+
+		main.main
+			section.p-pagetitle
+				.l-inner
+					h1.c-pagetitle__hdg
+			section.l-section
+				.l-inner
+					p.c-text--01
+			section.l-section
+				.l-inner
+					p.c-button__block
+						a(href="#" class="c-button--01")
+							span.text テキスト
+					ul.c-list__card--01
+						li.c-list__card--01__item
+						li.c-list__card--01__item
+						li.c-list__card--01__item
+
+		include ../asset/inc/_footer

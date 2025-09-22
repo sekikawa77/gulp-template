@@ -1,0 +1,14 @@
+@use 'sass:math';
+/*---------------------------------
+  function
+---------------------------------*/
+
+@function vw($size, $viewport: 375) {
+	$rate: math.div(100, $viewport);
+	@return $rate * $size * 1vw;
+}
+
+@function vw_lg($size, $viewport: 1250) {
+	$rate: math.div(100, $viewport);
+	@return $rate * $size * 0.3vw; 
+}

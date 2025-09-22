@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&amp;amp;display=swap">
+    <link rel="icon" href="/asset/images/common/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/asset/images/common/apple-touch-icon.png">
+    <link rel="icon" sizes="192x192" type="image/png" href="/asset/images/common/android-chrome-192x192.png">
+    <link rel="stylesheet" href="/asset/css/master.min.css">
+    <script src="/asset/js/script.min.js" defer></script>
+    <title>モジュール一覧ページ | サイトの名前</title>
+    <meta name="description" content="下層ページのディスクリプション">
+    <meta name="keywords" content="下層ページのキーワード">
+    <meta property="og:title" content="モジュール一覧ページ | サイトの名前">
+    <meta property="og:description" content="下層ページのディスクリプション">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hogehoge/module/">
+    <meta property="og:image" content="https://hogehogeasset/images/common/ogp.png">
+    <meta name="description" content="">
+  </head>
+  <body>
+    <header class="l-header">
+      <div class="l-inner">
+        <p class="l-header__logo"> <a href="/"> <img src="/asset/images/header-logo.svg" alt=""></a></p>
+        <button class="sp__btn"><span></span></button>
+        <nav class="l-header__gnav">
+          <ul class="l-header-gnav">
+            <li class="l-header-gnav__item"><a href="/#anc-01">home</a></li>
+            <li class="l-header-gnav__item"><a href="/works/">works</a></li>
+            <li class="l-header-gnav__item"><a href="/#anc-02">aaaa</a></li>
+            <li class="l-header-gnav__item"><a href="/#anc-03">anc03</a></li>
+            <li class="l-header-gnav__item"><a href="/#anc-04">anc04</a></li>
+            <li class="l-header-gnav__item"><a href="/#anc-05">anc05</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main class="main">
+      <section class="l-section">
+        <div class="l-inner">
+          <div class="c-box__01">
+            <h2 class="c-hdg__lv2__01">目次</h2>
+            <ul class="c-contents__list"></ul>
+          </div>
+          <div class="l-block">
+            <h2 class="c-hdg__lv2__01 js-contents">margin-inline</h2>
+            <p class="c-text__01"><code>margin-left: auto;</code>、<code>margin-right: auto;</code>より記述が短く書ける。<code>padding</code>にも使える</p>
+            <pre>
+              <button class="js-copy-button"><span class="text">copy</span></button><code>.p-element {
+	margin-inline: auto;
+}</code></pre>
+            <p class="p-element">内容</p>
+          </div>
+          <div class="l-block">
+            <h2 class="c-hdg__lv2__01 js-contents">transform</h2>
+            <p class="c-text__01"><code>transform</code>プロパティは独立して使えるようになった。<code>skew()</code>には使えない。</p>
+            <pre>
+              <button class="js-copy-button"><span class="text">copy</span></button><code>.element__02 {
+	translate: 30% 20px;
+	rotate: 10deg;
+	scale: 1.2;
+}</code></pre>
+            <p class="p-element__02">内容</p>
+          </div>
+          <div class="l-block">
+            <h2 class="c-hdg__lv2__01 js-contents">mask-imageでsvgアイコンのhover時の色を変更</h2>
+            <p class="c-text__01"></p>
+            <pre>
+              <button class="js-copy-button"><span class="text">copy</span></button><code>.c-button__01 {
+	@include mixin.hover {
+		&:hover {
+			background-color: #000;
+		}
+	}
+
+	&::before {
+		content "";
+		mask-image: url(/asset/images/icon_check.svg);
+		mask-position: center center;
+		mask-repeat: no-repeat;
+		mask-size: cover;
+		background-color: #ff0000;
+	}
+}</code></pre>
+            <p class="c-button__wrap"><a class="c-button__01 _icon" href="#">ボタン</a></p>
+          </div>
+          <div class="l-block">
+            <h2 class="c-hdg__lv2__01 js-contents">picture要素で画面幅によって画像の出し分け</h2>
+            <pre>
+              <button class="js-copy-button"><span class="text">copy</span></button><code>picture.c-picture__01
+	source(media="(min-width: 1024px)" srcset="/asset/images/1024px以上の画像.png")
+	source(media="(min-width: 768px)" srcset="/asset/images/768px以上の画像.png")
+	img(src="デフォルトの画像", alt="")</code></pre>
+            <picture class="c-picture__01">
+              <source media="(min-width: 1024px)" srcset="https://placehold.jp/e43a53/ffffff/900x150.png?text=1024px%E4%BB%A5%E4%B8%8A%E3%81%AE%E7%94%BB%E5%83%8F">
+              <source media="(min-width: 768px)" srcset="https://placehold.jp/3d4070/ffffff/700x150.png?text=768px%E4%BB%A5%E4%B8%8A%E3%81%AE%E7%94%BB%E5%83%8F"><img src="https://placehold.jp/96a239/ffffff/400x100.png?text=768px%E4%BB%A5%E4%B8%8B%E3%81%AE%E7%94%BB%E5%83%8F" alt="">
+            </picture>
+          </div>
+          <div class="l-block">
+            <h2 class="c-hdg__lv2__01 js-contents">カード型コンテンツのgap計算</h2>
+            <p class="c-text__01">（カラムの数） - （親のgap * カラム数(-1) / カラム数）</p>
+            <pre>
+              <button class="js-copy-button"><span class="text">copy</span></button><code>li {
+	width: calc((100% / 4) - (30px * 3 / 4));
+}</code></pre>
+            <ul class="c-card__01">
+              <li>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</li>
+              <li>いいいいいいいいいいいい</li>
+              <li>ううううううううううううううううう</li>
+              <li>ええええええええ</li>
+              <li>おおおおおおおおお</li>
+            </ul>
+          </div>
+          <div class="l-block">
+            <h2 class="c-hdg__lv2__01 js-contents">改行してもボタンの角丸を保つ<br>スマホ、タブレットのhover処理</h2>
+            <p class="c-text__01">hover操作が可能なデバイスが存在<em>しない</em>場合には、<code>@media (any-hover: hover)</code>で意図しないhoverを防ぐ</p>
+            <pre>
+              <button class="js-copy-button"><span class="text">copy</span></button><code>.c-button__01 {
+	border-radius: 100vmax;
+	background-color: #000;
+
+	@include mixin.hover {
+		&:hover {
+			background-color: #ccc;
+		}
+	}
+}</code></pre>
+            <p class="c-button__wrap"><a class="c-button__01" href="#">ボタン<br>ボタンテキスト<br>ボタンテキスト</a></p>
+            <p class="c-button__wrap"><a class="c-button__01" href="#">ボタン<br>ボタンテキスト</a></p>
+          </div>
+          <div class="l-block">
+            <h2 class="c-hdg__lv2__01 js-contents">clip-pathの三角形</h2>
+            <p class="c-text__01">ジェネレーターサイト「<a href="https://bennettfeely.com/clippy/" target="_blank">Clippy」</a></p>
+            <pre>
+              <button class="js-copy-button"><span class="text">copy</span></button><code>.c-triangle-left {
+	width: 20px;
+	height: 20px;
+	clip-path: polygon(100% 0, 0 50%, 100% 100%);
+}</code></pre><span class="c-triangle-left"></span>
+          </div>
+          <div class="l-block">
+            <h2 class="c-hdg__lv2__01 js-contents">subgridでカードレイアウトの縦の高さを合わせる</h2>
+            <pre>
+              <button class="js-copy-button"><span class="text">copy</span></button><code>.c-card__02 {
+	display: grid;
+}
+
+.c-card__02__item {
+	display: grid;
+	grid-template-rows: subgrid;
+	grid-row: span 4;
+	gap: 0;
+}</code></pre>
+            <ul class="c-card__02">
+              <li class="c-card__02__item">
+                <h3 class="c-card__02__hdg">見出し</h3>
+                <figure class="c-card__02__image"><img src="https://placehold.jp/400x140.png" alt=""></figure>
+                <p class="c-card__02__text">テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+                <p class="c-card__02__tag"><span class="text">タグ1</span><span class="text">タグ1</span><span class="text">タグ3</span></p>
+              </li>
+              <li class="c-card__02__item">
+                <h3 class="c-card__02__hdg">見出し見出し見出し見出し見出し見出し見出し見出し見出し見出し</h3>
+                <figure class="c-card__02__image"><img src="https://placehold.jp/400x140.png" alt=""></figure>
+                <p class="c-card__02__text">テキストテキストテキストテキストテキスト</p>
+                <p class="c-card__02__tag"><span class="text">タグ1</span></p>
+              </li>
+              <li class="c-card__02__item">
+                <h3 class="c-card__02__hdg">見出し見出し見出し見出し見出し見出し見出し見出し見出し見出し見出し見出し見出し見出し見出し見出し見出し見出し見出し見出し</h3>
+                <figure class="c-card__02__image"><img src="https://placehold.jp/400x140.png" alt=""></figure>
+                <p class="c-card__02__text">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+              </li>
+            </ul>
+          </div>
+          <div class="l-block">
+            <h2 class="c-hdg__lv2__01 js-contents">複数タブ</h2>
+            <pre>
+              <button class="js-copy-button"><span class="text">copy</span></button><code>.tab
+	ul.tab__list
+		li: button(type="button" class="tab-button js-tab-button") タブ1-1
+		li: button(type="button" class="tab-button js-tab-button") タブ1-2
+		li: button(type="button" class="tab-button js-tab-button") タブ1-3
+	.tab__panel
+		.panel
+			p タブ1のパネルタブ1のパネルタブ1のパネルタブ1のパネルタブ1のパネルタブ1のパネルタブ1のパネルタブ1のパネルタブ1のパネル
+		.panel
+			p タブ2のパネルタブ2のパネルタブ2のパネルタブ2のパネルタブ2のパネルタブ2のパネルタブ2のパネルタブ2のパネルタブ2のパネルタブ2のパネル
+		.panel
+			p タブ3のパネルタブ3のパネルタブ3のパネルタブ3のパネルタブ3のパネルタブ3のパネル</code></pre>
+            <div class="c-tab">
+              <ul class="tab__list">
+                <li>
+                  <button class="tab-button js-tab-button" type="button">タブ1-1</button>
+                </li>
+                <li>
+                  <button class="tab-button js-tab-button" type="button">タブ1-2</button>
+                </li>
+                <li>
+                  <button class="tab-button js-tab-button" type="button">タブ1-3</button>
+                </li>
+              </ul>
+              <div class="tab__panel">
+                <div class="panel">
+                  <p>タブ1のパネルタブ1のパネルタブ1のパネルタブ1のパネルタブ1のパネルタブ1のパネルタブ1のパネルタブ1のパネルタブ1のパネル</p>
+                </div>
+                <div class="panel">
+                  <p>タブ2のパネルタブ2のパネルタブ2のパネルタブ2のパネルタブ2のパネルタブ2のパネルタブ2のパネルタブ2のパネルタブ2のパネルタブ2のパネル</p>
+                </div>
+                <div class="panel">
+                  <p>タブ3のパネルタブ3のパネルタブ3のパネルタブ3のパネルタブ3のパネルタブ3のパネル</p>
+                </div>
+              </div>
+            </div>
+            <div class="c-tab">
+              <ul class="tab__list">
+                <li>
+                  <button class="tab-button js-tab-button" type="button">タブ2-1</button>
+                </li>
+                <li>
+                  <button class="tab-button js-tab-button" type="button">タブ2-2</button>
+                </li>
+                <li>
+                  <button class="tab-button js-tab-button" type="button">タブ2-3</button>
+                </li>
+              </ul>
+              <div class="tab__panel">
+                <div class="panel">
+                  <p>タブ2-1タブ2-1タブ2-1タブ2-1タブ2-1タブ2-1タブ2-1タブ2-1タブ2-1タブ2-1タブ2-1</p>
+                </div>
+                <div class="panel">
+                  <p>タブ2-2タブ2-2タブ2-2タブ2-2タブ2-2タブ2-2タブ2-2</p>
+                </div>
+                <div class="panel">
+                  <p>タブ2-3タブ2-3タブ2-3タブ2-3タブ2-3タブ2-3タブ2-3タブ2-3タブ2-3タブ2-3</p>
+                </div>
+              </div>
+            </div>
+            <div class="countdown">
+              <p class="text"><span class="date"></span>日</p>
+              <p class="text"><span class="hour"></span>時間</p>
+              <p class="text"><span class="min"></span>分</p>
+              <p class="text"><span class="sec"></span>秒</p>
+              <p class="text"><span class="seconds"></span></p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="l-footer">
+      <p class="l-pagetop"><a class="totop" href="#">ページトップに戻る</a></p>
+      <div class="l-inner">
+        <p>フッター</p>
+      </div>
+    </footer>
+  </body>
+</html>

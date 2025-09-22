@@ -1,0 +1,23 @@
+@use 'mixin';
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: var(--noto-sans);
+    color: var(--body);
+	overflow-wrap: anywhere;
+	line-break: strict;
+	line-height: 1.5;
+}
+
+a {
+    color: inherit;
+
+    &:hover,
+    &:active,
+    &:visited {
+
+    }
+}

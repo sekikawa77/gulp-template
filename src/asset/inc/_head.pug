@@ -1,0 +1,35 @@
+- var sitename = 'サイトの名前'
+- var siteurl = 'https://hogehoge'
+
+meta(charset='utf-8')
+meta(name='viewport' content='width=device-width,initial-scale=1')
+meta(name='format-detection' content='telephone=no')
+
+link(rel="preconnect", href="https://fonts.googleapis.com")
+link(rel="preconnect", href="https://fonts.gstatic.com")
+link(rel="stylesheet", href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&amp;display=swap")
+
+link(rel="icon" href="/asset/images/common/favicon.ico")
+link(rel="apple-touch-icon", sizes="180x180" href="/asset/images/common/apple-touch-icon.png")
+link(rel="icon" sizes="192x192" type="image/png" href="/asset/images/common/android-chrome-192x192.png")
+
+link(rel="stylesheet", href='/asset/css/master.min.css')
+script(src='/asset/js/script.min.js' defer)
+
+unless pageType == 'top'
+	title !{title} | !{sitename}
+else
+	title !{sitename}
+
+meta(name='description' content=description)
+meta(name='keywords' content=keywords)
+
+unless pageType == 'top'
+	meta(property='og:title' content=title +' | '+ sitename)
+else
+	meta(property='og:title' content=sitename)
+
+meta(property='og:description' content=description)
+meta(property='og:type' content='website')
+meta(property='og:url' content=siteurl + url)
+meta(property='og:image' content=siteurl + 'asset/images/common/ogp.png')

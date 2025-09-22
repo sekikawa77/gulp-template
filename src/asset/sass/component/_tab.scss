@@ -1,0 +1,43 @@
+@use '../foundation/mixin';
+/*---------------------------------
+  タブ
+---------------------------------*/
+.tab {
+    margin-top: 60px
+}
+
+.tab__list {
+    display: flex;
+    gap: 10px;
+    border-bottom: 1px solid #000;
+
+    > li {
+		border-radius: 10px 10px 0 0;
+		background-color: #ccc;
+
+		&.is-active {
+			background-color: #ff0000;
+		}
+    }
+}
+
+.tab-button {
+	background: none;
+	border: none;
+	cursor: pointer;
+	font-size: 1.6rem;
+	padding: 3px 10px;
+}
+
+.panel {
+    display: none;
+    padding-top: 20px;
+
+    &.is-active {
+        display: block;
+    }
+
+    p {
+        font-size: 1.6rem;
+    }
+}

@@ -1,0 +1,23 @@
+@use 'var';
+
+/*---------------------------------
+  mixin
+---------------------------------*/
+
+@mixin tab {
+    @media (min-width:(var.$tab)) {
+        @content;
+    }
+}
+
+@mixin pc {
+    @media (min-width:(var.$pc)) {
+        @content;
+    }
+}
+
+@mixin hover {
+	@media(any-hover: hover) {
+		@content;
+	}
+}

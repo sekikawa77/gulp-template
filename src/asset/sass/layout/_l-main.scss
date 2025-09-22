@@ -1,0 +1,20 @@
+@use '../foundation/mixin';
+/*---------------------------------
+  main
+---------------------------------*/
+//セクション
+.l-main {
+	overflow: hidden;
+}
+
+.l-section {
+
+}
+
+.l-inner {
+    max-width: calc(var(--inner) + var(--inner-padding));
+	padding-inline: calc(var(--inner-padding) / 2);
+    margin-inline: auto;
+	position: relative;
+	z-index: 1;
+}
