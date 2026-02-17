@@ -66,7 +66,7 @@ const cssSass = () => {
 //js
 const js = () => {
     return src([
-		'src/asset/js/jquery-3.7.1.min.js',
+		'src/asset/js/jquery-4.0.0.min.js',
 		'src/asset/js/slick.min.js',
 		'src/asset/js/jquery.magnific-popup.min.js',
 		'src/asset/js/run.js',
