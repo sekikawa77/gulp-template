@@ -8,7 +8,11 @@
 }
 
 .l-section {
+	margin-top: 40px;
 
+	@include mixin.pc {
+		margin-top: 80px;
+	}
 }
 
 .l-inner {

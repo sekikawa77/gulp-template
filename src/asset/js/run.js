@@ -1,34 +1,34 @@
 'use strict';
 
 //ここから下は不要なので削除すること
-function counter () {
-    const now = new Date();
-    const goal = new Date(2025, 3, 20, 10, 30);
-    const millisecond = goal.getTime() - now.getTime();
+// function counter () {
+//     const now = new Date();
+//     const goal = new Date(2025, 3, 20, 10, 30);
+//     const millisecond = goal.getTime() - now.getTime();
 
-    const date = Math.floor(millisecond / (1000 * 60 * 60 * 24));
-    const hour = Math.floor(millisecond  / 1000 / 60 / 60) % 24;
-    const min = Math.floor(millisecond / 1000 / 60) % 60;
-    const sec = Math.floor(millisecond / 1000) % 60;
-    const seconds = Math.floor(millisecond / 1000);
+//     const date = Math.floor(millisecond / (1000 * 60 * 60 * 24));
+//     const hour = Math.floor(millisecond  / 1000 / 60 / 60) % 24;
+//     const min = Math.floor(millisecond / 1000 / 60) % 60;
+//     const sec = Math.floor(millisecond / 1000) % 60;
+//     const seconds = Math.floor(millisecond / 1000);
 
 
-    document.querySelector('.date').innerHTML = date;
-    document.querySelector('.hour').innerHTML = hour;
-    document.querySelector('.min').innerHTML = min;
-    document.querySelector('.sec').innerHTML = sec;
-    document.querySelector('.seconds').innerHTML = seconds;
+//     document.querySelector('.date').innerHTML = date;
+//     document.querySelector('.hour').innerHTML = hour;
+//     document.querySelector('.min').innerHTML = min;
+//     document.querySelector('.sec').innerHTML = sec;
+//     document.querySelector('.seconds').innerHTML = seconds;
 
-    if(millisecond < 0) {
-        clearInterval(timer);
-        document.querySelector('.date').innerHTML = 0;
-        document.querySelector('.hour').innerHTML = 0;
-        document.querySelector('.min').innerHTML = 0;
-        document.querySelector('.sec').innerHTML = 0;
-        document.querySelector('.seconds').innerHTML = 0;
-    }
-};
-const timer = setInterval(counter, 1000);
+//     if(millisecond < 0) {
+//         clearInterval(timer);
+//         document.querySelector('.date').innerHTML = 0;
+//         document.querySelector('.hour').innerHTML = 0;
+//         document.querySelector('.min').innerHTML = 0;
+//         document.querySelector('.sec').innerHTML = 0;
+//         document.querySelector('.seconds').innerHTML = 0;
+//     }
+// };
+// const timer = setInterval(counter, 1000);
 
 $(function(){
 	//要素のコピー
@@ -216,30 +216,72 @@ $(function(){
     }());
 
 
-    //scrollしたらclassを付与
+    // //scrollしたらclassを付与
+    // (function () {
+
+    //     let jsAnime = function(){
+    //         $('.js-anime').each(function(){
+    //             let position = $(this).offset().top;
+    //             let scroll = $win.scrollTop();
+    //             let winheight = $win.height();
+
+    //             // この要素のスクロール位置 - ウインドウの縦幅
+    //             if(scroll > position - winheight) {
+    //                 $(this).addClass('is-active');
+    //             }
+    //         });
+    //     };
+
+    //     $win.on('scroll', function(){
+    //         jsAnime();
+    //     });
+
+    //     $win.on('load', function(){
+    //         jsAnime();
+    //     });
+    // }());
+
+    // scrollしたらclassを付与
     (function () {
+		// オプション設定
+		// 条件：
+		// ターゲット要素の3割が画面に入ったら
+		// 補足：
+		// rootMarginをマイナスにしすぎると、
+		// ページ最下部でスクロールできる余白が足りずに
+		// 監視対象が一生交差しないままになってしまうことがあります。
+		const option = {
+			root: null,
+			rootMargin: "0px",
+			threshold: 0.3,
+		}
 
-        let jsAnime = function(){
-            $('.js-anime').each(function(){
-                let position = $(this).offset().top;
-                let scroll = $win.scrollTop();
-                let winheight = $win.height();
+		// インスタンス生成
+		// コールバック関数とオプションを渡します
+		const observer = new IntersectionObserver(doWhenIntersect, option);
 
-                // この要素のスクロール位置 - ウインドウの縦幅
-                if(scroll > position - winheight) {
-                    $(this).addClass('is-active');
-                }
-            });
-        };
+		// 監視対象にしたい要素を渡す
+		$('.js-fade').each(function() {
+			observer.observe(this);
+		});
 
-        $win.on('scroll', function(){
-            jsAnime();
-        });
+		// コールバック関数
+		function doWhenIntersect(entries) {
+			console.log(entries);
 
-        $win.on('load', function(){
-            jsAnime();
-        });
-    }());
+			entries.forEach(entry => {
+				 // 要素が交差したら…
+				if(entry.isIntersecting) {
+					// クラスをつける
+					$(entry.target).addClass('is-fade');
+
+					// 一度表示された要素は、再び監視する必要がないため、
+					// クラス付与後に unobserve で監視対象から外します
+					observer.unobserve(entry.target);
+				}
+			});
+		}
+	}());
 
     // totop
     (function () {
