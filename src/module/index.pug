@@ -20,6 +20,39 @@ html(lang='ja')
 						h2.c-hdg__lv2__01 目次
 						ul.c-contents__list
 
+
+					.l-block
+						h2.c-hdg__lv2__01.js-contents @scopeと:scope
+						p.c-text__01 #[code @scope]：CSSのスコープを制御
+							br
+							| #[code :scope]：スコープのルート要素を指定する
+
+						pre
+							button.js-copy-button
+								span.text copy
+							code
+								| @scope (.p-main-visual) {
+								|	:scope {
+								|		color: #00ff00;
+								|
+								|		.c-text__01 {
+								|			color: #ff0000;
+								|			height: 60px;
+								|		}
+								|	}
+								|
+								|	.c-text__01 {
+								|		color: #0000ff;
+								|	}
+								| }
+						section.p-main-visual
+							.l-inner
+								p.c-text__01 あああああああああああああああああああああああああああああ
+								p.c-text__02 ううううううううううううううううううううううう
+						section.about
+							.l-inner
+								p.c-text__01 いいいいいいいいいいいいいいいいいいいい
+
 					.l-block
 						h2.c-hdg__lv2__01.js-contents text-box（Firefox未対応 2026/3/26）
 						p.c-text__01 上下のスペースのうち、どちらをトリミングするかを指定できるプロパティ#[code text-box-trim: trim-both;]

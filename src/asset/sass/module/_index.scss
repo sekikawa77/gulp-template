@@ -248,8 +248,23 @@ code {
 	}
 }
 
+/* @scope
+---------------------------------*/
+@scope (.p-main-visual) {
+	:scope {
+		color: #00ff00;
 
-/* ↓↓　削除　↓↓
+		.c-text__01 {
+			color: #ff0000;
+			height: 60px;
+		}
+	}
+
+	.c-text__01 {
+		color: #0000ff;
+	}
+}
+
 /* intersectionobserver
 ---------------------------------*/
 .block {

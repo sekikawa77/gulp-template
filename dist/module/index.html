@@ -47,6 +47,36 @@
             <ul class="c-contents__list"></ul>
           </div>
           <div class="l-block">
+            <h2 class="c-hdg__lv2__01 js-contents">@scopeと:scope</h2>
+            <p class="c-text__01"><code>@scope</code>：CSSのスコープを制御<br><code>:scope</code>：スコープのルート要素を指定する</p>
+            <pre>
+              <button class="js-copy-button"><span class="text">copy</span></button><code>@scope (.p-main-visual) {
+	:scope {
+		color: #00ff00;
+
+		.c-text__01 {
+			color: #ff0000;
+			height: 60px;
+		}
+	}
+
+	.c-text__01 {
+		color: #0000ff;
+	}
+}</code></pre>
+            <section class="p-main-visual">
+              <div class="l-inner">
+                <p class="c-text__01">あああああああああああああああああああああああああああああ</p>
+                <p class="c-text__02">ううううううううううううううううううううううう</p>
+              </div>
+            </section>
+            <section class="about">
+              <div class="l-inner">
+                <p class="c-text__01">いいいいいいいいいいいいいいいいいいいい</p>
+              </div>
+            </section>
+          </div>
+          <div class="l-block">
             <h2 class="c-hdg__lv2__01 js-contents">text-box（Firefox未対応 2026/3/26）</h2>
             <p class="c-text__01">上下のスペースのうち、どちらをトリミングするかを指定できるプロパティ<code>text-box-trim: trim-both;</code><br><code>trim-both</code>：上下両方<br><code>trim-start</code>：上<br><br>トリミングを開始する位置を指定するプロパティ<code>text-box-edge: text;</code><br><code>text</code>：初期値<br><code>cap</code>：上部（英大文字Xの上限）の位置でトリミング<br><code>alphabetic</code>：下部（英小文字xの下限）の位置でトリミング<br><br>ショートハンド<code>text-box: trim-both cap alphabetic;</code></p>
             <pre>
