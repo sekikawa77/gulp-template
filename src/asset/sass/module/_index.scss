@@ -89,7 +89,7 @@ code {
 
 .c-text__01 {
 	margin-top: 30px;
-	font-size: 1.4rem;
+	font-size: 1.6rem;
 
 	em {
 		color: #ff0000;
@@ -232,4 +232,61 @@ code {
 	translate: 30% 20px;
 	scale: 1.2;
 	rotate: 10deg;
+}
+
+.column {
+	margin-top: 40px;
+	display: flex;
+	gap: 40px;
+
+	.content {
+		text-box: trim-both cap alphabetic;
+	}
+
+	.c-text__01 {
+		margin-top: 0;
+	}
+}
+
+
+/* ↓↓　削除　↓↓
+/* intersectionobserver
+---------------------------------*/
+.block {
+	background-color: #eee;
+	padding: 20px;
+
+	@include mixin.pc {
+		padding: 40px;
+	}
+
+}
+
+.hdg {
+	font-size: 2rem;
+}
+
+.text {
+	margin-top: 10px;
+	font-size: 1.6rem;
+}
+
+.list {
+	width: fit-content;
+	margin: 20px auto 0;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+
+	@include mixin.tab {
+		flex-direction: row;
+	}
+
+	@include mixin.pc {
+		gap: 40px;
+	}
+
+	> li {
+		flex: 1;
+	}
 }

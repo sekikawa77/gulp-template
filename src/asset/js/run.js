@@ -36,7 +36,7 @@ $(function(){
 	let html;
 	const doneText = '<p class="c-done__text">コピーしました</p>';
 
-	$jsCopyButton.on('click', function() {
+	$jsCopyButton.one('click', function() {
 		html = $(this).next().html();
 		navigator.clipboard.writeText(html);
 
@@ -253,7 +253,7 @@ $(function(){
 		const option = {
 			root: null,
 			rootMargin: "0px",
-			threshold: 0.3,
+			threshold: 0.3, //0〜1まで
 		}
 
 		// インスタンス生成
@@ -341,6 +341,7 @@ $(function(){
               enabled:true
             }
         });
+
     }());
 
     // メディアクエリのイベントセット

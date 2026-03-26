@@ -21,6 +21,44 @@ html(lang='ja')
 						ul.c-contents__list
 
 					.l-block
+						h2.c-hdg__lv2__01.js-contents text-box（Firefox未対応 2026/3/26）
+						p.c-text__01 上下のスペースのうち、どちらをトリミングするかを指定できるプロパティ#[code text-box-trim: trim-both;]
+							br
+							| #[code trim-both]：上下両方
+							br
+							| #[code trim-start]：上
+							br
+							br
+							| トリミングを開始する位置を指定するプロパティ#[code text-box-edge: text;]
+							br
+							| #[code text]：初期値
+							br
+							| #[code cap]：上部（英大文字Xの上限）の位置でトリミング
+							br
+							| #[code alphabetic]：下部（英小文字xの下限）の位置でトリミング
+							br
+							br
+							| ショートハンド#[code text-box: trim-both cap alphabetic;]
+
+						pre
+							button.js-copy-button
+								span.text copy
+							code text-box-trim: trim-both;
+								br
+								| text-box-edge: cap alphabetic;
+								br
+								br
+								| text-box: trim-both cap alphabetic;
+
+						.column
+							.content
+								p.c-text__01 横並びカラムだと、light-heightで文字の上が空いてるように見えるので、text-boxを指定
+									br
+									| テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+							.image
+								img(src="https://placehold.jp/3d4070/ffffff/550x450.png", alt="")
+
+					.l-block
 						h2.c-hdg__lv2__01.js-contents margin-inline
 						p.c-text__01 #[code margin-left: auto;]、#[code margin-right: auto;]より記述が短く書ける。#[code padding]にも使える
 						pre
