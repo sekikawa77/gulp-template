@@ -10,12 +10,18 @@ $tab: 768px;
 	--body: #333;
 	--main-color: #333;
 	--sub-color: #000;
+	--white: #fff;
+
+
+	//コンテナサイズ
 	--inner-padding: 30px;
 	--inner: 1100px;
-	--transition: .4s;
+
+	//font
 	--noto-sans: "Noto Sans JP", sans-serif;
 
 
+	--transition: .4s;
 	//https://easings.net/ja
 	/* Sine（もっとも弱い） */
 	--ease-sine-in: cubic-bezier(0.47, 0, 0.745, 0.715);
