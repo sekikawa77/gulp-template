@@ -2,35 +2,68 @@
 /*---------------------------------
   top
 ---------------------------------*/
-
 .u-sp {
-  display: block;
+	display: block;
 
-  @include mixin.tab {
-      display: none;
-  }
+	@include mixin.tab {
+		display: none;
+	}
+}
+
+.u-sp-pc {
+	display: block;
+
+	@include mixin.tab {
+		display: none;
+	}
+
+	@include mixin.pc {
+		display: block;
+	}
 }
 
 .u-tab {
-  display: none;
+	display: none;
 
-  @include mixin.tab {
-      display: block;
-  }
+	@include mixin.tab {
+		display: block;
+	}
+}
+
+.u-tab-none {
+  display: block;
+
+	@include mixin.tab {
+		display: none;
+	}
+}
+
+.u-tab-only {
+	display: none;
+
+	@include mixin.tab {
+		display: block;
+	}
+
+	@include mixin.pc {
+		display: none;
+	}
 }
 
 .u-pc {
-  display: none;
+	display: none;
 
-  @include mixin.pc {
-      display: block;
-  }
+	@include mixin.pc {
+		display: block;
+	}
 }
 
 .u-pc-none {
-  display: block;
+	display: block;
 
-  @include mixin.pc {
-      display: none;
-  }
+	@include mixin.pc {
+		display: none;
+	}
 }
+
+
