@@ -1,0 +1,31 @@
+@use '../foundation/mixin';
+/*---------------------------------
+  faq
+---------------------------------*/
+/* toggle
+---------------------------------*/
+.faq__list {
+	font-size: 1.6rem;
+
+	> div {
+		display: flex;
+		flex-direction: column;
+
+		&:not(:first-of-type) {
+			margin-top: 20px;
+		}
+	}
+}
+
+.faq__button {
+	cursor: pointer;
+	background-color: #ccc;
+
+}
+.faq__answer {
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height .4s ease 0s;
+	background-color: #ff0;
+
+}

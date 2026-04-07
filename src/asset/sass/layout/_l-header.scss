@@ -32,6 +32,7 @@
 	cursor: pointer;
 	position: relative;
 	z-index: 1;
+	align-self: center;
 
 	@include mixin.tab {
 		display: none;
@@ -91,7 +92,7 @@
 	height: 100dvh;
 	visibility: hidden;
 	opacity: 0;
-	transition: .4s var(--ease-quart-inout);
+	transition: opacity .4s var(--ease-quart-inout);
     padding-inline: 20px;
     display: flex;
     flex-direction: column;
