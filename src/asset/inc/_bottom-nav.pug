@@ -1,0 +1,38 @@
+include ./_variable
+.l-grad-bg
+	.l-narrow__inner
+		if(pageType === 'works') :
+			//works配下
+			ul.button__link__list
+				li
+					a(href=pages.works[0].children[0].url)
+						p.button__link__text= pages.works[0].children[0].title
+						.button__wrap.js-button-anime
+							p.button__link__button
+								span.text ぺージを見る
+				li
+					a(href=pages.works[0].children[1].url)
+						p.button__link__text= pages.works[0].children[1].title
+						.button__wrap.js-button-anime
+							p.button__link__button
+								span.text ぺージを見る
+		elseif(pageType === 'works') :
+			//about配下
+			ul.button__link__list
+				li
+					a(href=pages.works[0].children[0].url)
+						p.button__link__text= pages.works[0].children[0].title
+						.button__wrap.js-button-anime
+							p.button__link__button
+								span.text ページを見る
+				li
+					a(href=pages.works[0].children[1].url)
+						p.button__link__text サービスを
+							br
+							| ご利用になりたい方へ
+						.button__wrap.js-button-anime
+							p.button__link__button
+								span.text ページを見る
+
+		endif;
+

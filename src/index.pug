@@ -1,7 +1,8 @@
-- var description = 'トップページのディスクリプション'
-- var keywords = 'トップページのキーワード'
-- var url = '/'
-- var pageType = 'top'
+include asset/inc/_variable
+- var title = pages.top[0].title
+- var description = pages.top[0].description
+- var keywords = pages.top[0].keywords
+- var pageType = 'top';
 
 doctype html
 html(lang='ja')
@@ -18,7 +19,8 @@ html(lang='ja')
 					p.c-text__02 ううううううううううううううううううううううう
 			section.about
 				.l-inner
-					p.c-text__01 いいいいいいいいいいいいいいいいいいいい
+					p.c-text__01
+						a(href="pages.works[0].children[0].url")= pages.works[0].children[0].title
 
 			section.l-section#anc-01
 				.l-inner

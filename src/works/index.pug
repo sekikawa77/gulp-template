@@ -1,7 +1,11 @@
-- var title = '下層ページ'
-- var description = '下層ページのディスクリプション'
-- var keywords = '下層ページのキーワード'
-- var url = '/works/'
+include ../asset/inc/_variable
+- var parentTitle = pages.works[0].title
+- var title = pages.works[0].children[0].title
+- var description = pages.top[0].description
+- var keywords = pages.top[0].keywords
+- var url = pages.works[0].children[0].url
+- var en = pages.works[0].children[0].en
+- var pageType = 'works'
 
 doctype html
 html(lang='ja')
@@ -17,6 +21,8 @@ html(lang='ja')
 			section.p-pagetitle
 				.l-inner
 					h1.c-pagetitle__hdg
+						span.jp= title
+						span.en= en
 			section.l-section
 				.l-inner
 					p.c-text--01
@@ -29,5 +35,7 @@ html(lang='ja')
 						li.c-list__card--01__item
 						li.c-list__card--01__item
 						li.c-list__card--01__item
+			
+			include ../asset/inc/_bottom-nav
 
 		include ../asset/inc/_footer
