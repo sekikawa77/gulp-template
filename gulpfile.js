@@ -17,6 +17,7 @@ const pngquant = require('imagemin-pngquant');
 const changed = require('gulp-changed');
 const browserSync = require('browser-sync');
 const sourcemaps = require("gulp-sourcemaps");
+let prettier;
 
 //参照元パス
 const srcPath = {
@@ -35,7 +36,8 @@ const destPath = {
 }
 
 //pug
-const htmlPug = () => {
+const htmlPug = async () => {
+	prettier = (await import('gulp-prettier')).default;
     return src([srcPath.pug , '!src/**/_*.pug'])
     .pipe(plumber({
         errorHandler: notify.onError("Error: <%= error.message %>")
@@ -43,6 +45,11 @@ const htmlPug = () => {
     .pipe(pug({
         pretty: true
     }))
+	.pipe(prettier({
+		useTabs: true,
+		parser: "html",
+		printWidth: 999
+	}))
     .pipe(dest(destPath.pug))
 }
 
@@ -58,9 +65,10 @@ const cssSass = () => {
         autoprefixer(),
 		cssnano()
     ]))
-	.pipe(sourcemaps.write())
     .pipe(rename({extname: '.min.css'}))
+	.pipe(sourcemaps.write())
     .pipe(dest(destPath.css))
+	.pipe(browserSync.stream());
 }
 
 //js
@@ -78,6 +86,7 @@ const js = () => {
     .pipe(uglify())
     .pipe(rename({extname: '.min.js'}))
     .pipe(dest(destPath.js))
+	.pipe(browserSync.stream());
 }
 
 //画像の圧縮
@@ -117,9 +126,9 @@ const browserSyncReload = (done) => {
 
 
 const watchFiles = () => {
-    watch(srcPath.pug, series(htmlPug, browserSyncReload))
-    watch(srcPath.css, series(cssSass, browserSyncReload))
-    watch(srcPath.js, series(js, browserSyncReload))
+    watch('src/**/*.pug', { events: ['change'] }, series(htmlPug, browserSyncReload))
+    watch(srcPath.css, series(cssSass))
+    watch(srcPath.js, series(js))
     watch(srcPath.img, series(imageMin, browserSyncReload))
 }
 

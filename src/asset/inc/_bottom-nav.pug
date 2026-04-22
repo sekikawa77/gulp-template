@@ -1,7 +1,6 @@
-include ./_variable
 .l-grad-bg
 	.l-narrow__inner
-		if(pageType === 'works') :
+		if(pageType === 'works')
 			//works配下
 			ul.button__link__list
 				li
@@ -16,7 +15,7 @@ include ./_variable
 						.button__wrap.js-button-anime
 							p.button__link__button
 								span.text ぺージを見る
-		elseif(pageType === 'works') :
+		else if(pageType === 'contact')
 			//about配下
 			ul.button__link__list
 				li
@@ -34,5 +33,5 @@ include ./_variable
 							p.button__link__button
 								span.text ページを見る
 
-		endif;
+		endif
 

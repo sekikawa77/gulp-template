@@ -1,10 +1,3 @@
-include _variable
-- var sitename = pages.top[0].sitename
-- var siteurl = pages.top[0].siteurl
-- var home = pages.top[0].en
-- var homeUrl = pages.top[0].url
-
-
 meta(charset='utf-8')
 meta(name='viewport' content='width=device-width,initial-scale=1')
 meta(name='format-detection' content='telephone=no')
@@ -23,7 +16,7 @@ script(src='/asset/js/script.min.js' defer)
 if pageType == 'top'
 	title !{sitename}
 else
-	title !{title} | !{pages[pageType][0].title} | !{sitename}
+	title !{title} | #{parentTitle} | !{sitename}
 
 meta(name='description' content=description)
 meta(name='keywords' content=keywords)
@@ -31,9 +24,11 @@ meta(name='keywords' content=keywords)
 if pageType == 'top'
 	meta(property='og:title' content=sitename)
 else
-	meta(property='og:title' content=title +' | '+ sitename)
+	meta(property='og:title' content=title +' | '+parentTitle +' | '+ sitename)
 
 meta(property='og:description' content=description)
 meta(property='og:type' content='website')
 meta(property='og:url' content=siteurl + url)
 meta(property='og:image' content=siteurl + 'asset/images/common/ogp.png')
+
+
