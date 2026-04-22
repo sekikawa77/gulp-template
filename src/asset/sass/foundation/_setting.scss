@@ -2,6 +2,11 @@
 
 html {
     font-size: 62.5%;
+
+	&.is-active {
+		overflow: hidden;
+		height: 100dvh;
+	}
 }
 
 body {
@@ -18,6 +23,6 @@ a {
     &:hover,
     &:active,
     &:visited {
-
+		text-decoration: underline;
     }
 }

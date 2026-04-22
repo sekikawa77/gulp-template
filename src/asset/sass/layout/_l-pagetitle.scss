@@ -1,0 +1,35 @@
+@use '../foundation/mixin';
+/*---------------------------------
+  pagetitle
+---------------------------------*/
+/* l-pagetitle
+---------------------------------*/
+.l-pagetitle {
+	padding-block: 10px;
+	background: var(--sub-color);
+
+	@include mixin.pc {
+		padding-block: 14px;
+	}
+}
+
+.pagetitle__hdg {
+	display: flex;
+	justify-content: space-between;
+	color: var(--white);
+	font-size: 1.4rem;
+
+	@include mixin.pc {
+		font-size: 2.6rem;
+	}
+
+	> .main {
+		font-weight: 400;
+	}
+
+	> .sub {
+		color: rgba(255,255,255,0.3);
+		font-weight: 700;
+		font-style: italic;
+	}
+}

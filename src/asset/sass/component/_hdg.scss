@@ -2,3 +2,21 @@
 /*---------------------------------
   hdg
 ---------------------------------*/
+/*  h2
+---------------------------------*/
+.hdg-lv2 {
+	font-size: 2.4rem;
+	color: var(--main-color);
+	letter-spacing: .05em;
+
+	@include mixin.pc {
+		font-size: 3.2rem;
+	}
+
+	&._center {
+		text-align: center;
+	}
+}
+
+/*  h3
+---------------------------------*/

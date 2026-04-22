@@ -1,0 +1,47 @@
+@use '../foundation/mixin';
+/*---------------------------------
+  breadcrumbs
+---------------------------------*/
+.l-breadcrumbs {
+	padding-block: 6px;
+}
+
+.breadcrumb__list {
+	display: flex;
+	flex-wrap: wrap;
+
+	> li {
+		> a,
+		> .parent__text {
+			position: relative;
+			padding-right: 16px;
+
+			&::after {
+				content: "";
+				position: absolute;
+				right: 6px;
+				top: 50%;
+				translate: 0 -50%;
+				backface-visibility: hidden;
+				width: 6px;
+				height: 6px;
+				border-right: 1px solid var(--sub-color);
+				border-top: 1px solid var(--sub-color);
+				rotate: 45deg;
+			}
+		}
+
+		> a {
+			text-decoration: none;
+			transition: var(--transition);
+
+			@include mixin.hover {
+				&:hover {
+					text-decoration: underline;
+					color: var(--sub-color);
+				}
+			}
+		}
+
+	}
+}

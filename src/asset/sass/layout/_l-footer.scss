@@ -29,4 +29,20 @@
 	background-color: #ff0000;
 	border-radius: 50%;
 	color: transparent;
+
+	@include mixin.hover {
+		&:hover {
+
+		}
+	}
+}
+
+
+
+.footer__copy {
+	color: var(--white);
+
+	small {
+		font-size: 1.4rem;
+	}
 }

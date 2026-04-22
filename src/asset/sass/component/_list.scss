@@ -2,19 +2,42 @@
 /*---------------------------------
   list
 ---------------------------------*/
-.c-card__01 {
-	margin-top: 30px;
-	display: flex;
-	gap: 30px;
-	flex-wrap: wrap;
+/* list__bullet
+---------------------------------*/
+.list__bullet {
+	margin-top: 40px;
+
+	&._mt0 {
+		margin-top: 0;
+	}
 
 	> li {
-		padding: 10px;
-		width: calc((100% / 4) - (30px * 3 / 4));
-		background-color: #eee;
+		font-size: 1.4rem;
+		line-height: 1.75;
+		position: relative;
+		padding-left: 1em;
+
+		&:not(:first-child) {
+			margin-top: 8px;
+		}
+
+		@include mixin.pc {
+			font-size: 1.6rem;
+		}
+
+		&::before {
+			content: "・";
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
+
+		em {
+			font-weight: 700;
+			color: var(--main-color);
+		}
 	}
 }
-
 
 
 
