@@ -61,6 +61,8 @@ const cssSass = () => {
         errorHandler: notify.onError("Error: <%= error.message %>")
     }))
     .pipe(sass({outputStyle: 'expanded'}))
+	.pipe(sourcemaps.write())
+	.pipe(dest(destPath.css))
     .pipe(postcss([
         autoprefixer(),
 		cssnano()
