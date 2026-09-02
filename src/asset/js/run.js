@@ -149,18 +149,29 @@ $(function(){
 			threshold: 0.3,
 		};
 
-		const observer = new IntersectionObserver((entries, obs) => {
+		// インスタンス生成
+		// コールバック関数とオプションを渡します
+		const observer = new IntersectionObserver(doWhenIntersect, option);
+
+		// 監視対象にしたい要素を渡す
+		$('.js-anime, .js-anime-left, .js-anime-scale').each(function() {
+			observer.observe(this);
+		});
+
+		// コールバック関数
+		function doWhenIntersect(entries) {
 			entries.forEach(entry => {
-				if (entry.isIntersecting) {
-					entry.target.classList.add('is-fade');
-					obs.unobserve(entry.target);
+				 // 要素が交差したら…
+				if(entry.isIntersecting) {
+					// クラスをつける
+					$(entry.target).addClass('is-anime');
+
+					// 一度表示された要素は、再び監視する必要がないため、
+					// クラス付与後に unobserve で監視対象から外します
+					observer.unobserve(entry.target);
 				}
 			});
-		}, option);
-
-		doc.querySelectorAll('.js-fade').forEach(el => {
-			observer.observe(el);
-		});
+		}
 	})();
 
 	/* =========================
@@ -229,6 +240,33 @@ $(function(){
 				scrollable: "横スクロール",
 			},
 		});
+	})();
+
+	/* =========================
+		modal
+	========================= */
+	(() => {
+		const modalOverlay = document.querySelector('.modal__overlay');
+		const modal = document.querySelector('.modal');
+		const jsModalOpen = document.querySelector('.js-modal-open');
+		const jsCloseButton = document.querySelector('.js-close-button');
+		const modalContent = document.querySelector('.modal__content');
+		const isOpen = 'is-open';
+
+		jsModalOpen.addEventListener('click', ()=> {
+			modalContent.classList.add(isOpen);
+			modalOverlay.classList.add(isOpen);
+			modal.classList.add(isOpen);
+		});
+
+		jsCloseButton.addEventListener('click', modalRemove);
+		modalOverlay.addEventListener('click', modalRemove);
+
+		function modalRemove() {
+			modalContent.classList.remove(isOpen);
+			modalOverlay.classList.remove(isOpen);
+			modal.classList.remove(isOpen);
+		}
 	})();
 
 	/* =========================

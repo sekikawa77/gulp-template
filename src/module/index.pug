@@ -20,7 +20,156 @@ html(lang='ja')
 						h2.c-hdg__lv2__01 目次
 						ul.c-contents__list
 
+					.l-block
+						h2.c-hdg__lv2__01.js-contents splide
+						p.c-text__01 スライダー
+						section.l-section
+							.slide__wrap
+								.splide-slide.splide
+									.splide__track
+										ul.splide__list
+											li.splide__slide
+												figure.slide__figure
+													img(src="https://placehold.jp/1000x500.png", alt="")
+												p.section__text テキストテキストテキストテキストテキストテキスト
+											li.splide__slide
+												figure.slide__figure
+													img(src="https://placehold.jp/1000x500.png", alt="")
+												p.section__text テキストテキストテキストテキストテキストテキスト
+											li.splide__slide
+												figure.slide__figure
+													img(src="https://placehold.jp/1000x500.png", alt="")
+												p.section__text テキストテキストテキストテキストテキストテキスト
+											li.splide__slide
+												figure.slide__figure
+													img(src="https://placehold.jp/1000x500.png", alt="")
+												p.section__text テキストテキストテキストテキストテキストテキスト
+									.splide__nav
+										.splide__arrows.splide__arrows--ltr
+											button.splide__arrow.splide__arrow--prev(type="button" aria-label="Previous slide")
+												img(src="icon-arrow.svg", alt="")
+												| ←
+											button.splide__arrow.splide__arrow--next(type="button" aria-label="Next slide")
+												img(src="icon-arrow.svg", alt="")
+												| →
+										ul.splide__pagination
 
+					.l-block
+						h2.c-hdg__lv2__01.js-contents モーダル
+						section.l-section
+							.l-inner
+								p.js-modal-open モーダル開く
+
+					.l-block
+						h2.c-hdg__lv2__01.js-contents スクロールヒント
+						section.l-section
+							.l-inner
+								.table__wrap.js-scroll-hint
+									table.table__01
+										tbody
+											tr
+												th ああああああああああああああああああああああああああああああああああああ
+												td うううううううううううううううううううううううううううううううううううううううううう
+											tr
+												th ああああああああああああああああああああああああああああああああああああ
+												td うううううううううううううううううううううううううううううううううううううううううう
+
+					.l-block
+						h2.c-hdg__lv2__01.js-contents タブと絞り込み
+						section.l-section
+							.l-inner
+								.item
+									ul.tab__list
+										li.js-tab-button.is-active カテゴリーから探す1
+										li.js-tab-button 課題から探す1
+									.tab__panel
+										.panel.is-active
+											p.section__text あああああああああああああああああああああああああああああ
+										.panel
+											p.section__text いいいいいいいいいいいいいいいいいいいいいいいいい
+								.item
+									ul.tab__list
+										li.js-tab-button.is-active カテゴリーから探す2
+										li.js-tab-button 課題から探す2
+									.tab__panel
+										.panel.is-active
+											ul.filter__list
+												li(data-filter="type101") グループウェア
+												li(data-filter="type102") ワークフロー
+												li(data-filter="type103") 情報漏洩対策
+												li(data-filter="type106") セキュリティ強化
+												li(data-filter="type104") ファイル共有
+												li(data-filter="type105") 働き方改革
+												li(data-filter="type109") 基幹システム
+												li(data-filter="type110") ID統合基盤
+												li(data-filter="type107") バックアップ
+												li(data-filter="type108") クラウドサーバー
+											p(data-filter="all" class="filter__list__all") 絞り込み解除
+										.panel
+											ul.filter__list
+												li(data-filter="type201") 大規模災害に備えて対策をしたい
+												li(data-filter="type202") 外出時業務の利便性を向上させたい
+												li(data-filter="type203") クラウドをセキュアに利用したい
+												li(data-filter="type204") 業務の管理体制を強化したい
+												li(data-filter="type205") 運用管理の負荷を軽減したい
+												li(data-filter="type206") 業務の効率化を図りたい
+												li(data-filter="type207") 標的型攻撃への対策をしたい
+												li(data-filter="type208") 社内コミュニケーションを改善したい
+												li(data-filter="type209") 私物端末の利用を管理したい
+											p(data-filter="all" class="filter__list__all") 絞り込み解除
+										.category
+											ul.category__list
+												li
+													a(href="#" data-category="type108 type205") ゲストOSタイプ
+												li
+													a(href="#" data-category="type108 type205") 仮想基盤専用タイプ
+												li
+													a(href="#" data-category="type107 type201 type203 type205 type207") 低価格で高セキュリティなクラウドストレージ
+												li
+													a(href="#" data-category="type104 type201") 大容量のクラウド型ファイルサーバ
+												li
+													a(href="#" data-category="type103 type204 type209") 国内導入シェアNo.1 IT資産管理
+												li
+													a(href="#" data-category="type103 type204 type209") スマホやPCをクラウドで一元管理できるMDM＋PC管理
+												li
+													a(href="#" data-category="type103 type204 type209") クライアント運用管理ソフトウェア
+												li
+													a(href="#" data-category="type106") Active Directoryをクラウドスタイルで提供するサービス
+												li
+													a(href="#" data-category="type101 type206 type208") 国内シェアNo.1の大企業向けグループウェア
+												li
+													a(href="#" data-category="type106") Windows Sever Update Serviesをクラウドスタイルで提供するサービス
+												li
+													a(href="#" data-category="type103 type106 type207") エンドポイント向けクラウド型セキュリティサービス
+												li
+													a(href="#" data-category="type104 type201") 企業向けクラウドストレージサービス
+												li
+													a(href="#" data-category="type109 type206") 奉行シリーズのクラウドサービス
+												li
+													a(href="#" data-category="type104 type105 type106 type110 type203 type205") シングルサインオンを実現するクラウドサービス
+												li
+													a(href="#" data-category="type104 type105 type106 type110 type203 type205") クラウド統合認証サービス
+					.l-block
+						h2.c-hdg__lv2__01.js-contents よくある質問トグル
+						section.l-section
+							.l-inner
+								dl.faq__list
+									div
+										dt.faq__button Q1. 質問です
+										dd.faq__answer A1. 答えです答えです答えです答えです答えです答えです答えです答えです答えです答えです答えです答えです答えです答えです答えです答えです答えです
+									div
+										dt.faq__button Q2. 質問です
+										dd.faq__answer A2. 答えです答えです答えです答えです答えです答えです答えです答えです答えです答えです
+									div
+										dt.faq__button Q3. 質問です
+										dd.faq__answer A3. 答えです答えです答えです答えです答えです答えです答えです答えです答えです答えです答えです答えです答えです答えです答えです答えです答えです答えです答えです答えです答えです
+									div
+										dt.faq__button Q4. 質問です
+										dd.faq__answer A4. 答えです答えです答えです答えです答えです答えです答えです答えです答えです答えです答えです答えです答えです答えです答えです答えです答えです
+											br
+											| 答えです答えです答えです答えです答えです
+											br
+											| 答えです答えです答えです
 					.l-block
 						h2.c-hdg__lv2__01.js-contents @scopeと:scope
 						p.c-text__01 #[code @scope]：CSSのスコープを制御
@@ -267,48 +416,48 @@ html(lang='ja')
 								figure.c-card__02__image
 									img(src="https://placehold.jp/400x140.png", alt="")
 								p.c-card__02__text テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
-					.l-block
-						h2.c-hdg__lv2__01.js-contents 複数タブ
-						pre
-							button.js-copy-button
-								span.text copy
-							code
-								| .tab
-								| 	ul.tab__list
-								| 		li: button(type="button" class="tab-button js-tab-button") タブ1-1
-								| 		li: button(type="button" class="tab-button js-tab-button") タブ1-2
-								| 		li: button(type="button" class="tab-button js-tab-button") タブ1-3
-								| 	.tab__panel
-								| 		.panel
-								| 			p タブ1のパネルタブ1のパネルタブ1のパネルタブ1のパネルタブ1のパネルタブ1のパネルタブ1のパネルタブ1のパネルタブ1のパネル
-								| 		.panel
-								| 			p タブ2のパネルタブ2のパネルタブ2のパネルタブ2のパネルタブ2のパネルタブ2のパネルタブ2のパネルタブ2のパネルタブ2のパネルタブ2のパネル
-								| 		.panel
-								| 			p タブ3のパネルタブ3のパネルタブ3のパネルタブ3のパネルタブ3のパネルタブ3のパネル
-						.c-tab
-							ul.tab__list
-								li: button(type="button" class="tab-button js-tab-button") タブ1-1
-								li: button(type="button" class="tab-button js-tab-button") タブ1-2
-								li: button(type="button" class="tab-button js-tab-button") タブ1-3
-							.tab__panel
-								.panel
-									p タブ1のパネルタブ1のパネルタブ1のパネルタブ1のパネルタブ1のパネルタブ1のパネルタブ1のパネルタブ1のパネルタブ1のパネル
-								.panel
-									p タブ2のパネルタブ2のパネルタブ2のパネルタブ2のパネルタブ2のパネルタブ2のパネルタブ2のパネルタブ2のパネルタブ2のパネルタブ2のパネル
-								.panel
-									p タブ3のパネルタブ3のパネルタブ3のパネルタブ3のパネルタブ3のパネルタブ3のパネル
-						.c-tab
-							ul.tab__list
-								li: button(type="button" class="tab-button js-tab-button") タブ2-1
-								li: button(type="button" class="tab-button js-tab-button") タブ2-2
-								li: button(type="button" class="tab-button js-tab-button") タブ2-3
-							.tab__panel
-								.panel
-									p タブ2-1タブ2-1タブ2-1タブ2-1タブ2-1タブ2-1タブ2-1タブ2-1タブ2-1タブ2-1タブ2-1
-								.panel
-									p タブ2-2タブ2-2タブ2-2タブ2-2タブ2-2タブ2-2タブ2-2
-								.panel
-									p タブ2-3タブ2-3タブ2-3タブ2-3タブ2-3タブ2-3タブ2-3タブ2-3タブ2-3タブ2-3
+					//- .l-block
+					//- 	h2.c-hdg__lv2__01.js-contents 複数タブ
+					//- 	pre
+					//- 		button.js-copy-button
+					//- 			span.text copy
+					//- 		code
+					//- 			| .tab
+					//- 			| 	ul.tab__list
+					//- 			| 		li: button(type="button" class="tab-button js-tab-button") タブ1-1
+					//- 			| 		li: button(type="button" class="tab-button js-tab-button") タブ1-2
+					//- 			| 		li: button(type="button" class="tab-button js-tab-button") タブ1-3
+					//- 			| 	.tab__panel
+					//- 			| 		.panel
+					//- 			| 			p タブ1のパネルタブ1のパネルタブ1のパネルタブ1のパネルタブ1のパネルタブ1のパネルタブ1のパネルタブ1のパネルタブ1のパネル
+					//- 			| 		.panel
+					//- 			| 			p タブ2のパネルタブ2のパネルタブ2のパネルタブ2のパネルタブ2のパネルタブ2のパネルタブ2のパネルタブ2のパネルタブ2のパネルタブ2のパネル
+					//- 			| 		.panel
+					//- 			| 			p タブ3のパネルタブ3のパネルタブ3のパネルタブ3のパネルタブ3のパネルタブ3のパネル
+					//- 	.c-tab
+					//- 		ul.tab__list
+					//- 			li: button(type="button" class="tab-button js-tab-button") タブ1-1
+					//- 			li: button(type="button" class="tab-button js-tab-button") タブ1-2
+					//- 			li: button(type="button" class="tab-button js-tab-button") タブ1-3
+					//- 		.tab__panel
+					//- 			.panel
+					//- 				p タブ1のパネルタブ1のパネルタブ1のパネルタブ1のパネルタブ1のパネルタブ1のパネルタブ1のパネルタブ1のパネルタブ1のパネル
+					//- 			.panel
+					//- 				p タブ2のパネルタブ2のパネルタブ2のパネルタブ2のパネルタブ2のパネルタブ2のパネルタブ2のパネルタブ2のパネルタブ2のパネルタブ2のパネル
+					//- 			.panel
+					//- 				p タブ3のパネルタブ3のパネルタブ3のパネルタブ3のパネルタブ3のパネルタブ3のパネル
+					//- 	.c-tab
+					//- 		ul.tab__list
+					//- 			li: button(type="button" class="tab-button js-tab-button") タブ2-1
+					//- 			li: button(type="button" class="tab-button js-tab-button") タブ2-2
+					//- 			li: button(type="button" class="tab-button js-tab-button") タブ2-3
+					//- 		.tab__panel
+					//- 			.panel
+					//- 				p タブ2-1タブ2-1タブ2-1タブ2-1タブ2-1タブ2-1タブ2-1タブ2-1タブ2-1タブ2-1タブ2-1
+					//- 			.panel
+					//- 				p タブ2-2タブ2-2タブ2-2タブ2-2タブ2-2タブ2-2タブ2-2
+					//- 			.panel
+					//- 				p タブ2-3タブ2-3タブ2-3タブ2-3タブ2-3タブ2-3タブ2-3タブ2-3タブ2-3タブ2-3
 						.countdown
 							p.text
 								span.date
@@ -324,5 +473,13 @@ html(lang='ja')
 								| 秒
 							p.text
 								span.seconds
+
+		.modal
+			button(type="button" class="js-close-button") 閉じる
+			.modal__content
+				p.section__text モーダル内容
+
+		.modal__overlay
+
 		include ../asset/inc/_footer
 
