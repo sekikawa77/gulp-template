@@ -281,9 +281,6 @@ $(function(){
 			const jsTabButtons = tabList.querySelectorAll('.js-tab-button');
 			const tabPanels = tab.querySelectorAll('.panel');
 
-
-			console.log(jsTabButtons);
-
 			jsTabButtons.forEach((jsTabButton, index) => {
 				jsTabButton.addEventListener('click', () => {
 
@@ -398,6 +395,43 @@ $(function(){
 
 	})();
 
+	/* =========================
+		fix__block
+	========================= */
+	(() => {
+		const fixBlock = doc.querySelector('.fix__block');
+
+		const isActive = 'is-active';
+		const isOpen = 'is-open';
+		const isStatic = 'is-static'
+
+		const blockFixed = () => {
+			const positionStart = doc.querySelector('.is-position-start');
+			const positionEnd = doc.querySelector('.is-position-end');
+
+			const scrollY = win.scrollY;// 現在のスクロール量
+			const positionTop = positionStart.getBoundingClientRect().top + scrollY;
+			const positionBottom = positionEnd.getBoundingClientRect().bottom;
+
+			//.is-position-startの上が画面の上を過ぎたら
+			if(scrollY >= positionTop) {
+				fixBlock.classList.add(isActive);
+			} else {
+				fixBlock.classList.remove(isActive);
+				fixBlock.classList.remove(isOpen);
+			}
+
+			//.is-position-endが下が画面の下を過ぎたら
+			if(positionBottom >= win.innerHeight) {
+				fixBlock.classList.remove(isStatic);
+			} else {
+				fixBlock.classList.add(isStatic);
+			}
+		}
+
+		blockFixed();
+		doc.addEventListener('scroll', blockFixed);
+})();
 	/* =========================
 		media query event
 	========================= */

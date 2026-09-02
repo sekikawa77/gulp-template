@@ -1,5 +1,43 @@
 @use '../foundation/mixin';
 /*---------------------------------
+  fix__block
+---------------------------------*/
+.fix__block {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	transition: opacity var(--transition);
+	z-index: 1;
+	background-color: #000;
+	padding: 10px;
+	opacity: 0;
+	visibility: hidden;
+
+	&.is-active {
+		opacity: 1;
+		visibility: visible;
+	}
+
+	&.is-static {
+		position: relative;
+	}
+}
+
+.fix__block__list {
+	display: flex;
+	gap: 10px;
+
+	> li {
+		flex: 1;
+		text-align: center;
+		font-size: 1.6rem;
+		background-color: #eee;
+		padding-block: 20px;
+	}
+}
+
+/*---------------------------------
   footer
 ---------------------------------*/
 .l-footer {

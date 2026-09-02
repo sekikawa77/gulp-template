@@ -1,12 +1,15 @@
 @charset "utf-8";
 
-@forward 'box';
-@forward 'animation';
-@forward 'btn';
 @forward 'hdg';
-@forward 'form';
+@forward 'text';
+@forward 'btn';
 @forward 'list';
-@forward 'modal';
-@forward 'tab';
-@forward 'splide';
+@forward 'box';
 @forward 'table';
+@forward 'animation';
+
+@forward 'form';
+
+@forward 'splide';
+@forward 'tab';
+@forward 'modal';
