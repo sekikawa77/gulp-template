@@ -195,6 +195,83 @@ $(function(){
 	})();
 
 	/* =========================
+		tab
+	========================= */
+	(() => {
+		const tabPanels = doc.querySelectorAll('.panel');
+		const jsTabButtons = doc.querySelectorAll('.js-tab-button');
+        const isActive = 'is-active';
+
+		jsTabButtons.forEach((jsTabButton, index) => {
+			jsTabButton.addEventListener('click', () => {
+
+				jsTabButtons.forEach((button) => {
+					button.classList.remove(isActive);
+				});
+
+				tabPanels.forEach((panel) => {
+					panel.classList.remove(isActive);
+				});
+
+				jsTabButton.classList.add(isActive);
+				tabPanels[index].classList.add(isActive);
+			});
+		});
+	})();
+
+	/* =========================
+		絞り込み
+	========================= */
+	(() => {
+		const filterButtons = doc.querySelectorAll('[data-filter]');
+		const categoryContents = doc.querySelectorAll('[data-category]');
+        const isActive = 'is-active';
+        const isHidden = 'is-hidden';
+
+		filterButtons.forEach((filterButton) => {
+			filterButton.addEventListener('click', () => {
+
+				filterButtons.forEach((button) => {
+					button.classList.remove(isActive);
+				});
+
+				filterButton.classList.add(isActive);
+
+				const buttonCategory = filterButton.dataset.filter;
+
+				//絞り込み解除
+				if(buttonCategory === 'all') {
+					categoryContents.forEach((categoryContent) => {
+						const parent = categoryContent.parentElement;
+
+
+						console.log(categoryContent);
+
+						parent.classList.remove(isHidden);
+					});
+
+					return;
+				}
+
+
+				//通常の絞り込み
+				categoryContents.forEach((categoryContent) => {
+					const parent = categoryContent.parentElement;
+					const categories = categoryContent.dataset.category.split(' ');
+
+					parent.classList.add(isHidden);
+
+					//該当カテゴリーのみ表示
+					if(categories.includes(buttonCategory)) {
+						parent.classList.remove(isHidden);
+					}
+				});
+			});
+		});
+
+	})();
+
+	/* =========================
 		toggle
 	========================= */
 	(() => {
