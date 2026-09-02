@@ -77,9 +77,10 @@ const cssSass = () => {
 const js = () => {
     return src([
 		'src/asset/js/jquery-4.0.0.min.js',
-		'src/asset/js/slick.min.js',
-		'src/asset/js/jquery.magnific-popup.min.js',
+		// 'src/asset/js/slick.min.js',
+		// 'src/asset/js/jquery.magnific-popup.min.js',
 		'src/asset/js/splide.min.js',
+		'src/asset/js/scroll-hint.min.js',
 		'src/asset/js/run.js',
 	])
     .pipe(plumber({

@@ -126,8 +126,8 @@ $(function(){
 			if (!target) return;
 
 			const headerHeight = win.matchMedia('(min-width: 768px)').matches
-			? 150
-			: 70;
+			? 150 //ヘッダーの高さPC
+			: 70; //ヘッダーの高さSP
 
 			const position = target.getBoundingClientRect().top + win.scrollY - headerHeight;
 
@@ -176,22 +176,22 @@ $(function(){
 		pagetop.style.display = 'none';
 
 		win.addEventListener('scroll', () => {
-		if (win.scrollY > 500) {
-			pagetop.style.display = 'block';
-		} else {
-			pagetop.style.display = 'none';
-		}
+			if (win.scrollY > 500) {
+				pagetop.style.display = 'block';
+			} else {
+				pagetop.style.display = 'none';
+			}
 
-		const scrollHeight = doc.documentElement.scrollHeight;
-		const scrollPosition = win.innerHeight + win.scrollY;
-		const footHeight = footer.offsetHeight || 0;
+			const scrollHeight = doc.documentElement.scrollHeight;
+			const scrollPosition = win.innerHeight + win.scrollY;
+			const footHeight = footer.offsetHeight || 0;
 
-		if (scrollHeight - scrollPosition <= footHeight) {
-			pagetop.classList.add(isActive);
-		} else {
-			pagetop.classList.remove(isActive);
-		}
-		});
+			if (scrollHeight - scrollPosition <= footHeight) {
+				pagetop.classList.add(isActive);
+			} else {
+				pagetop.classList.remove(isActive);
+			}
+			});
 	})();
 
 	/* =========================
@@ -218,6 +218,17 @@ $(function(){
 		});
 
 		splide.mount();
+	})();
+
+	/* =========================
+		scroll-hint
+	========================= */
+	(() => {
+		new ScrollHint(".js-scroll-hint", {
+			i18n: {
+				scrollable: "横スクロール",
+			},
+		});
 	})();
 
 	/* =========================
