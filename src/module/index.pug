@@ -79,76 +79,78 @@ html(lang='ja')
 						section.l-section
 							.l-inner
 								.item
-									ul.tab__list
-										li.js-tab-button.is-active カテゴリーから探す1
-										li.js-tab-button 課題から探す1
-									.tab__panel
-										.panel.is-active
-											p.section__text あああああああああああああああああああああああああああああ
-										.panel
-											p.section__text いいいいいいいいいいいいいいいいいいいいいいいいい
+									.tab
+										ul.tab__list
+											li.js-tab-button.is-active カテゴリーから探す1
+											li.js-tab-button 課題から探す1
+										.tab__panel
+											.panel.is-active
+												p.section__text あああああああああああああああああああああああああああああ
+											.panel
+												p.section__text いいいいいいいいいいいいいいいいいいいいいいいいい
 								.item
-									ul.tab__list
-										li.js-tab-button.is-active カテゴリーから探す2
-										li.js-tab-button 課題から探す2
-									.tab__panel
-										.panel.is-active
-											ul.filter__list
-												li(data-filter="type101") グループウェア
-												li(data-filter="type102") ワークフロー
-												li(data-filter="type103") 情報漏洩対策
-												li(data-filter="type106") セキュリティ強化
-												li(data-filter="type104") ファイル共有
-												li(data-filter="type105") 働き方改革
-												li(data-filter="type109") 基幹システム
-												li(data-filter="type110") ID統合基盤
-												li(data-filter="type107") バックアップ
-												li(data-filter="type108") クラウドサーバー
-											p(data-filter="all" class="filter__list__all") 絞り込み解除
-										.panel
-											ul.filter__list
-												li(data-filter="type201") 大規模災害に備えて対策をしたい
-												li(data-filter="type202") 外出時業務の利便性を向上させたい
-												li(data-filter="type203") クラウドをセキュアに利用したい
-												li(data-filter="type204") 業務の管理体制を強化したい
-												li(data-filter="type205") 運用管理の負荷を軽減したい
-												li(data-filter="type206") 業務の効率化を図りたい
-												li(data-filter="type207") 標的型攻撃への対策をしたい
-												li(data-filter="type208") 社内コミュニケーションを改善したい
-												li(data-filter="type209") 私物端末の利用を管理したい
-											p(data-filter="all" class="filter__list__all") 絞り込み解除
-										.category
-											ul.category__list
-												li
-													a(href="#" data-category="type108 type205") ゲストOSタイプ
-												li
-													a(href="#" data-category="type108 type205") 仮想基盤専用タイプ
-												li
-													a(href="#" data-category="type107 type201 type203 type205 type207") 低価格で高セキュリティなクラウドストレージ
-												li
-													a(href="#" data-category="type104 type201") 大容量のクラウド型ファイルサーバ
-												li
-													a(href="#" data-category="type103 type204 type209") 国内導入シェアNo.1 IT資産管理
-												li
-													a(href="#" data-category="type103 type204 type209") スマホやPCをクラウドで一元管理できるMDM＋PC管理
-												li
-													a(href="#" data-category="type103 type204 type209") クライアント運用管理ソフトウェア
-												li
-													a(href="#" data-category="type106") Active Directoryをクラウドスタイルで提供するサービス
-												li
-													a(href="#" data-category="type101 type206 type208") 国内シェアNo.1の大企業向けグループウェア
-												li
-													a(href="#" data-category="type106") Windows Sever Update Serviesをクラウドスタイルで提供するサービス
-												li
-													a(href="#" data-category="type103 type106 type207") エンドポイント向けクラウド型セキュリティサービス
-												li
-													a(href="#" data-category="type104 type201") 企業向けクラウドストレージサービス
-												li
-													a(href="#" data-category="type109 type206") 奉行シリーズのクラウドサービス
-												li
-													a(href="#" data-category="type104 type105 type106 type110 type203 type205") シングルサインオンを実現するクラウドサービス
-												li
-													a(href="#" data-category="type104 type105 type106 type110 type203 type205") クラウド統合認証サービス
+									.tab
+										ul.tab__list
+											li.js-tab-button.is-active カテゴリーから探す2
+											li.js-tab-button 課題から探す2
+										.tab__panel
+											.panel.is-active
+												ul.filter__list
+													li(data-filter="type101") グループウェア
+													li(data-filter="type102") ワークフロー
+													li(data-filter="type103") 情報漏洩対策
+													li(data-filter="type106") セキュリティ強化
+													li(data-filter="type104") ファイル共有
+													li(data-filter="type105") 働き方改革
+													li(data-filter="type109") 基幹システム
+													li(data-filter="type110") ID統合基盤
+													li(data-filter="type107") バックアップ
+													li(data-filter="type108") クラウドサーバー
+												p(data-filter="all" class="filter__list__all") 絞り込み解除
+											.panel
+												ul.filter__list
+													li(data-filter="type201") 大規模災害に備えて対策をしたい
+													li(data-filter="type202") 外出時業務の利便性を向上させたい
+													li(data-filter="type203") クラウドをセキュアに利用したい
+													li(data-filter="type204") 業務の管理体制を強化したい
+													li(data-filter="type205") 運用管理の負荷を軽減したい
+													li(data-filter="type206") 業務の効率化を図りたい
+													li(data-filter="type207") 標的型攻撃への対策をしたい
+													li(data-filter="type208") 社内コミュニケーションを改善したい
+													li(data-filter="type209") 私物端末の利用を管理したい
+												p(data-filter="all" class="filter__list__all") 絞り込み解除
+											.category
+												ul.category__list
+													li
+														a(href="#" data-category="type108 type205") ゲストOSタイプ
+													li
+														a(href="#" data-category="type108 type205") 仮想基盤専用タイプ
+													li
+														a(href="#" data-category="type107 type201 type203 type205 type207") 低価格で高セキュリティなクラウドストレージ
+													li
+														a(href="#" data-category="type104 type201") 大容量のクラウド型ファイルサーバ
+													li
+														a(href="#" data-category="type103 type204 type209") 国内導入シェアNo.1 IT資産管理
+													li
+														a(href="#" data-category="type103 type204 type209") スマホやPCをクラウドで一元管理できるMDM＋PC管理
+													li
+														a(href="#" data-category="type103 type204 type209") クライアント運用管理ソフトウェア
+													li
+														a(href="#" data-category="type106") Active Directoryをクラウドスタイルで提供するサービス
+													li
+														a(href="#" data-category="type101 type206 type208") 国内シェアNo.1の大企業向けグループウェア
+													li
+														a(href="#" data-category="type106") Windows Sever Update Serviesをクラウドスタイルで提供するサービス
+													li
+														a(href="#" data-category="type103 type106 type207") エンドポイント向けクラウド型セキュリティサービス
+													li
+														a(href="#" data-category="type104 type201") 企業向けクラウドストレージサービス
+													li
+														a(href="#" data-category="type109 type206") 奉行シリーズのクラウドサービス
+													li
+														a(href="#" data-category="type104 type105 type106 type110 type203 type205") シングルサインオンを実現するクラウドサービス
+													li
+														a(href="#" data-category="type104 type105 type106 type110 type203 type205") クラウド統合認証サービス
 					.l-block
 						h2.c-hdg__lv2__01.js-contents よくある質問トグル
 						section.l-section

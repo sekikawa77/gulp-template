@@ -273,25 +273,40 @@ $(function(){
 		tab
 	========================= */
 	(() => {
-		const tabPanels = doc.querySelectorAll('.panel');
-		const jsTabButtons = doc.querySelectorAll('.js-tab-button');
-        const isActive = 'is-active';
+		const tabs = doc.querySelectorAll('.tab');
+		const isActive = 'is-active';
 
-		jsTabButtons.forEach((jsTabButton, index) => {
-			jsTabButton.addEventListener('click', () => {
+		tabs.forEach((tab) => {
+			const tabList = tab.querySelector('.tab__list');
+			const jsTabButtons = tabList.querySelectorAll('.js-tab-button');
+			const tabPanels = tab.querySelectorAll('.panel');
 
-				jsTabButtons.forEach((button) => {
-					button.classList.remove(isActive);
+
+			console.log(jsTabButtons);
+
+			jsTabButtons.forEach((jsTabButton, index) => {
+				jsTabButton.addEventListener('click', () => {
+
+					// すべてのタブを非active
+					jsTabButtons.forEach((button) => {
+						button.classList.remove(isActive);
+					});
+
+					// このタブ内のパネルをすべて非active
+					tabPanels.forEach((panel) => {
+						panel.classList.remove(isActive);
+					});
+
+					// クリックしたタブをactive
+					jsTabButton.classList.add(isActive);
+
+					// 対応するパネルをactive
+					tabPanels[index].classList.add(isActive);
 				});
-
-				tabPanels.forEach((panel) => {
-					panel.classList.remove(isActive);
-				});
-
-				jsTabButton.classList.add(isActive);
-				tabPanels[index].classList.add(isActive);
 			});
 		});
+
+
 	})();
 
 	/* =========================
