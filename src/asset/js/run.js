@@ -195,6 +195,32 @@ $(function(){
 	})();
 
 	/* =========================
+		splide
+	========================= */
+	(() => {
+		const splide = new Splide( '.splide-slide', {
+			autoplay: true, // 自動再生
+			type: "loop", // ループ
+			perPage : 1, //中央に何枚表示するか
+			pauseOnHover: false, // カーソルが乗ってもスクロールを停止させない
+			pauseOnFocus: false, // 矢印をクリックしてもスクロールを停止させない
+			interval: 4000, // 自動再生の間隔
+			speed: 500, // スライダーの移動時間
+			padding: "30%", // スライダーの左右の余白
+			gap: '20px', //余白
+			focus: 'center', //中央寄せ
+			breakpoints: {
+				767: {
+					padding: "0%",
+					perPage : 1,
+				}
+			}
+		});
+
+		splide.mount();
+	})();
+
+	/* =========================
 		tab
 	========================= */
 	(() => {
