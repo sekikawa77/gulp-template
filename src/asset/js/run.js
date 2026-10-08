@@ -229,6 +229,22 @@ $(function(){
 		});
 
 		splide.mount();
+
+		document.addEventListener('DOMContentLoaded', function() {
+			const loopSplide = new Splide( '.loop-slide', {
+				type: "loop", // ループ
+				perPage : 3, //中央に何枚表示するか
+				arrows: false,
+				pagenation: false,
+				autoScroll: {
+					speed: .5, // スライダーの移動時間
+					pauseOnHover: false, // カーソルが乗ってもスクロールを停止させない
+					pauseOnFocus: false, // 矢印をクリックしてもスクロールを停止させない
+				}
+			});
+
+			loopSplide.mount(window.splide.Extensions);
+		});
 	})();
 
 	/* =========================

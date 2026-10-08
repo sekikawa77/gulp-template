@@ -80,6 +80,7 @@ const js = () => {
 		// 'src/asset/js/slick.min.js',
 		// 'src/asset/js/jquery.magnific-popup.min.js',
 		'src/asset/js/splide.min.js',
+		'src/asset/js/splide-extension-auto-scroll.min.js',
 		'src/asset/js/scroll-hint.min.js',
 		'src/asset/js/run.js',
 	])
