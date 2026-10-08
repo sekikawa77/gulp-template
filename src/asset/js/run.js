@@ -726,22 +726,29 @@ $(function(){
 
 //     // tab
 //     (function () {
-// 		const $tabList = $('.tab__list');
-// 		const $tabPanel = $('.tab__panel');
-// 		const $jsTabButton = $('.js-tab-button');
-//         const isActive = 'is-active';
+		// const $tabs = $('.tabs');
+		// const $jsTabs = $('.js-tabs');
+		// const $panels = $('.panels');
+		// const $jsTabPanel = $('.js-tabpanel');
+		// const $tabButton = $('.tab-button');
+        // const isActive = 'is-active';
 
-// 		$tabList.each(function() {
-// 			$tabList.find('li:first-child').addClass(isActive);
-// 			$tabPanel.find('.panel:first-child').addClass(isActive)
-// 		});
+		// $tabs.each(function() {
+		// 	$jsTabs.each(function() {
+		// 		$(this).find('li:first-child').addClass(isActive);
+		// 	});
 
-//         $jsTabButton.on('click', function() {
-//             var index = $(this).parent('li').index();
+		// 	$panels.find('.js-tabpanel:first-of-type').addClass(isActive)
+		// });
 
-//             $(this).parent('li').addClass(isActive).siblings('li').removeClass(isActive);
-//             $(this).parents('.tab__list').next().children().removeClass(isActive).eq(index).addClass(isActive);
-//           });
+        // $tabButton.on('click', function() {
+        //     var index = $(this).index();
+
+		// 	$tabButton.removeClass(isActive);
+        //     $(this).addClass(isActive);
+
+        //     $(this).parent($jsTabs).siblings($panels).find($jsTabPanel).removeClass(isActive).eq(index).addClass(isActive);
+        //   });
 //     }());
 
 //     //Magnific Popup
