@@ -82,6 +82,27 @@
 								</div>
 							</div>
 						</div>
+						<p class="c-text__01"><code>splide-extension-auto-scroll.min.js</code>を読み込む</p>
+						<div class="slide__wrap">
+							<div class="loop-slide splide">
+								<div class="splide__track">
+									<ul class="splide__list">
+										<li class="splide__slide">
+											<figure class="slide__figure"><img src="https://placehold.jp/3d4070/ffffff/1000x500.png" alt="" /></figure>
+										</li>
+										<li class="splide__slide">
+											<figure class="slide__figure"><img src="https://placehold.jp/2731b4/ffffff/1000x500.png" alt="" /></figure>
+										</li>
+										<li class="splide__slide">
+											<figure class="slide__figure"><img src="https://placehold.jp/4db427/ffffff/1000x500.png" alt="" /></figure>
+										</li>
+										<li class="splide__slide">
+											<figure class="slide__figure"><img src="https://placehold.jp/f86516/ffffff/1000x500.png" alt="" /></figure>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
 					</div>
 					<div class="l-block">
 						<h2 class="c-hdg__lv2__01 js-contents">
@@ -92,7 +113,7 @@
 					<div class="l-block">
 						<h2 class="c-hdg__lv2__01 js-contents">過ぎたら表示、非表示</h2>
 						<div class="is-position-start">
-							<p class="section__text" style="padding-block: 100px; background-color: #eee; border: 1px solid #ff0000">ここを通りすぎたら表示</p>
+							<p class="section__text" style="padding-block: 100px; background-color: #eee; border: 1px solid #ff0000">ここを通りすぎたら下から固定表示</p>
 						</div>
 					</div>
 					<div class="l-block">
@@ -264,36 +285,16 @@
 						</section>
 					</div>
 					<div class="l-block">
-						<h2 class="c-hdg__lv2__01 js-contents">text-box（Firefox未対応 2026/3/26）</h2>
+						<h2 class="c-hdg__lv2__01 js-contents">text-box</h2>
 						<p class="c-text__01">上下のスペースのうち、どちらをトリミングするかを指定できるプロパティ<code>text-box-trim: trim-both;</code><br /><code>trim-both</code>：上下両方<br /><code>trim-start</code>：上<br /><br />トリミングを開始する位置を指定するプロパティ<code>text-box-edge: text;</code><br /><code>text</code>：初期値<br /><code>cap</code>：上部（英大文字Xの上限）の位置でトリミング<br /><code>alphabetic</code>：下部（英小文字xの下限）の位置でトリミング<br /><br />ショートハンド<code>text-box: trim-both cap alphabetic;</code></p>
 						<pre>
-              <button class="js-copy-button"><span class="text">copy</span></button><code>text-box-trim: trim-both;<br>text-box-edge: cap alphabetic;<br><br>text-box: trim-both cap alphabetic;</code></pre>
+              <button class="js-copy-button"><span class="text">copy</span></button><code>text-box-trim: trim-both;<br>text-box-edge: cap alphabetic;<br>text-box: trim-both cap alphabetic;</code></pre>
 						<div class="column">
 							<div class="content">
 								<p class="c-text__01">横並びカラムだと、light-heightで文字の上が空いてるように見えるので、text-boxを指定<br />テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
 							</div>
 							<div class="image"><img src="https://placehold.jp/3d4070/ffffff/550x450.png" alt="" /></div>
 						</div>
-					</div>
-					<div class="l-block">
-						<h2 class="c-hdg__lv2__01 js-contents">margin-inline</h2>
-						<p class="c-text__01"><code>margin-left: auto;</code>、<code>margin-right: auto;</code>より記述が短く書ける。<code>padding</code>にも使える</p>
-						<pre>
-              <button class="js-copy-button"><span class="text">copy</span></button><code>.p-element {
-	margin-inline: auto;
-}</code></pre>
-						<p class="p-element">内容</p>
-					</div>
-					<div class="l-block">
-						<h2 class="c-hdg__lv2__01 js-contents">transform</h2>
-						<p class="c-text__01"><code>transform</code>プロパティは独立して使えるようになった。<code>skew()</code>には使えない。</p>
-						<pre>
-              <button class="js-copy-button"><span class="text">copy</span></button><code>.element__02 {
-	translate: 30% 20px;
-	rotate: 10deg;
-	scale: 1.2;
-}</code></pre>
-						<p class="p-element__02">内容</p>
 					</div>
 					<div class="l-block">
 						<h2 class="c-hdg__lv2__01 js-contents">mask-imageでsvgアイコンのhover時の色を変更</h2>

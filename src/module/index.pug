@@ -79,7 +79,7 @@ html(lang='ja')
 					.l-block
 						h2.c-hdg__lv2__01.js-contents 過ぎたら表示、非表示
 						.is-position-start
-							p.section__text(style="padding-block: 100px; background-color: #eee; border: 1px solid #ff0000;") ここを通りすぎたら表示
+							p.section__text(style="padding-block: 100px; background-color: #eee; border: 1px solid #ff0000;") ここを通りすぎたら下から固定表示
 
 
 					.l-block
@@ -237,7 +237,7 @@ html(lang='ja')
 								p.c-text__01 いいいいいいいいいいいいいいいいいいいい
 
 					.l-block
-						h2.c-hdg__lv2__01.js-contents text-box（Firefox未対応 2026/3/26）
+						h2.c-hdg__lv2__01.js-contents text-box
 						p.c-text__01 上下のスペースのうち、どちらをトリミングするかを指定できるプロパティ#[code text-box-trim: trim-both;]
 							br
 							| #[code trim-both]：上下両方
@@ -263,7 +263,6 @@ html(lang='ja')
 								br
 								| text-box-edge: cap alphabetic;
 								br
-								br
 								| text-box: trim-both cap alphabetic;
 
 						.column
@@ -274,32 +273,7 @@ html(lang='ja')
 							.image
 								img(src="https://placehold.jp/3d4070/ffffff/550x450.png", alt="")
 
-					.l-block
-						h2.c-hdg__lv2__01.js-contents margin-inline
-						p.c-text__01 #[code margin-left: auto;]、#[code margin-right: auto;]より記述が短く書ける。#[code padding]にも使える
-						pre
-							button.js-copy-button
-								span.text copy
-							code
-								| .p-element {
-								| 	margin-inline: auto;
-								| }
 
-						p.p-element 内容
-					.l-block
-						h2.c-hdg__lv2__01.js-contents transform
-						p.c-text__01 #[code transform]プロパティは独立して使えるようになった。#[code skew()]には使えない。
-						pre
-							button.js-copy-button
-								span.text copy
-							code
-								| .element__02 {
-								| 	translate: 30% 20px;
-								| 	rotate: 10deg;
-								| 	scale: 1.2;
-								| }
-
-						p.p-element__02 内容
 					.l-block
 						h2.c-hdg__lv2__01.js-contents mask-imageでsvgアイコンのhover時の色を変更
 						p.c-text__01
