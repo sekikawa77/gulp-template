@@ -4,7 +4,7 @@
 .js-anime {
     opacity: 0;
     visibility: hidden;
-    transform: translateX(15px);
+    transform: translateY(15px);
 
 	transition-property: opacity, transform;
 	transition-duration: 1s;
@@ -14,7 +14,7 @@
     &.is-active {
         opacity: 1;
         visibility: visible;
-        transform: translateX(0);
+        transform: translateY(0);
     }
 }
 
