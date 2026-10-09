@@ -13,3 +13,8 @@
 - /module/
 - /asset/sass/module/
 - /asset/sass/module/master.scss
+
+
+## webpを使う場合は以下をコメントアウトしてください
+- watch(srcPath.img, series(imageMin, browserSyncReload))
+- exports.default = series(series(htmlPug, cssSass, js, imageMin), parallel(watchFiles, browserSyncFunc));

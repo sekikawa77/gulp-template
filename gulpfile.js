@@ -13,7 +13,8 @@ const notify = require('gulp-notify');
 
 const imagemin = require('gulp-imagemin');
 const mozjpeg = require('imagemin-mozjpeg');
-const pngquant = require('imagemin-pngquant');
+const pngquant = require('imagemin-pngquant')
+
 const changed = require('gulp-changed');
 const browserSync = require('browser-sync');
 const sourcemaps = require("gulp-sourcemaps");
@@ -95,23 +96,40 @@ const js = () => {
 }
 
 //画像の圧縮
-const imageMin = () => {
-    return src(srcPath.img)
-    .pipe(changed(destPath.img))
-    .pipe(
-        imagemin([
-            pngquant({
-                quality: [.70, .85],
-                speed: 1
-            }),
-            mozjpeg({ quality: 90}),
-            imagemin.svgo(),
-            imagemin.optipng(),
-            imagemin.gifsicle({ optimizationLevel: 3})
-        ])
-    )
-    .pipe(dest(destPath.img));
+// const imageMin = () => {
+//     return src(srcPath.img)
+//     .pipe(changed(destPath.img))
+//     .pipe(
+//         imagemin([
+//             pngquant({
+//                 quality: [.70, .85],
+//                 speed: 1
+//             }),
+//             mozjpeg({ quality: 90}),
+//             imagemin.svgo(),
+//             imagemin.optipng(),
+//             imagemin.gifsicle({ optimizationLevel: 3})
+//         ])
+//     )
+//     .pipe(dest(destPath.img));
+// }
+
+//webp変換
+const webp = async () => {
+	const gulpWebp = (await import('gulp-webp')).default;
+
+    return Promise.all([
+		// JPG・PNGをWebPに変換
+		src(srcPath.img +'.{jpg,jpeg,png}')
+			.pipe(gulpWebp({ quality: 80 }))
+			.pipe(dest(destPath.img)),
+
+		// SVGは変換せず、そのままコピー
+		src(srcPath.img +'.svg')
+			.pipe(dest(destPath.img))
+	]);
 }
+
 
 //ローカルサーバー立ち上げ、ファイル監視と自動リロード
 const browserSyncFunc = () => {
@@ -134,9 +152,16 @@ const watchFiles = () => {
     watch('src/**/*.pug', { events: ['change'] }, series(htmlPug, browserSyncReload))
     watch(srcPath.css, series(cssSass))
     watch(srcPath.js, series(js))
-    watch(srcPath.img, series(imageMin, browserSyncReload))
+
+	//通常の画像
+    //watch(srcPath.img, series(imageMin, browserSyncReload))
+
+	//webpを使う場合
+    watch(srcPath.img, series(webp, browserSyncReload))
 }
 
-exports.default = series(series(htmlPug, cssSass, js, imageMin), parallel(watchFiles, browserSyncFunc));
+//通常の画像
+//exports.default = series(series(htmlPug, cssSass, js, imageMin), parallel(watchFiles, browserSyncFunc));
 
-
+//webpを使う場合
+exports.default = series(series(htmlPug, cssSass, js, webp), parallel(watchFiles, browserSyncFunc));
