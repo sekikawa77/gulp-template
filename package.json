@@ -9,13 +9,13 @@
     "start": "gulp"
   },
   "browserslist": [
-    "last 1 versions"
+    "defaults"
   ],
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "autoprefixer": "^10.3.1",
+    "autoprefixer": "^10.6.1",
     "browser-sync": "^2.27.7",
     "cssnano": "^7.0.6",
     "eslint": "^10.2.1",
@@ -36,8 +36,8 @@
     "gulp-webp": "^5.1.0",
     "imagemin-mozjpeg": "^9.0.0",
     "imagemin-pngquant": "^9.0.2",
-    "postcss": "^8.3.6",
-    "prettier": "^3.8.3",
-    "sass": "^1.99.0"
+    "postcss": "^8.5.29",
+    "prettier": "^3.9.9",
+    "sass": "^1.105.1"
   }
 }
