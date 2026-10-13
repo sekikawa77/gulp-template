@@ -76,7 +76,7 @@ $(function(){
 		const header = doc.querySelector('.l-header');
 		const headerButton = doc.querySelector('.sp__btn');
 		const globalNavigation = doc.querySelector('.l-header__gnav');
-
+		const mediaQuery = win.matchMedia('(min-width: 1024px)');
 		const isActive = 'is-active';
 		const isOpen = 'is-open';
 
@@ -93,6 +93,20 @@ $(function(){
 		// 		headerButton.click();
 		// 	});
 		// });
+
+		// SPのみ　アンカークリックでメニュー閉じる
+		globalNavigation.addEventListener('click', (e) => {
+			const link = e.target.closest('a[href*="#"]');
+
+			if (!link) return;
+
+			if (!mediaQuery.matches) {
+				body.classList.remove(isActive);
+				globalNavigation.classList.remove(isOpen);
+				headerButton.classList.remove(isActive);
+				header.classList.remove(isActive);
+			}
+		});
 
 		// メディアクエリ変化
 		win.addEventListener('customMatchMedia', (e) => {
@@ -112,30 +126,59 @@ $(function(){
 		smooth scroll
 	========================= */
 	(() => {
-		doc.querySelectorAll('a[href^="#"]').forEach(anchor => {
-
-
-		anchor.addEventListener('click', (e) => {
-			e.preventDefault();
-
-			const href = anchor.getAttribute('href');
-			const target = (href === '#' || href === '#top')
-			? doc.documentElement //true
-			: doc.querySelector(href); //false
-
-			if (!target) return;
+		doc.querySelectorAll('a[href*="#"]').forEach(link => {
 
 			const headerHeight = win.matchMedia('(min-width: 768px)').matches
-			? 150 //ヘッダーの高さPC
-			: 70; //ヘッダーの高さSP
+			? 50 //ヘッダーの高さPC
+			: 50; //ヘッダーの高さSP
 
-			const position = target.getBoundingClientRect().top + win.scrollY - headerHeight;
+			link.addEventListener('click', e => {
+				const url = new URL(link.href);
 
-			win.scrollTo({
-				top: position,
-				behavior: 'smooth'
+				// 別ページなら通常遷移
+				if(url.pathname !== location.pathname) {
+					return;
+				}
+
+				e.preventDefault();
+
+				// ページトップへ戻る場合（href="#"）
+				if (url.hash === '#' || !url.hash) {
+					win.scrollTo({
+						top: 0,
+						behavior: 'smooth'
+					});
+
+					return;
+				}
+
+				const target = doc.querySelector(url.hash);
+				const position = target.getBoundingClientRect().top + win.scrollY - headerHeight;
+
+				if(target) {
+					win.scrollTo({
+						top: position,
+						behavior: 'smooth'
+					});
+				}
 			});
-		});
+
+			// 別ページから #付きで来た場合
+			win.addEventListener('load', ()=> {
+				if(!location.hash) {
+					return;
+				}
+
+				const target = doc.querySelector(location.hash);
+				const position = target.getBoundingClientRect().top + win.scrollY - headerHeight;
+
+				if(target) {
+					win.scrollTo({
+						top: position,
+						behavior: 'smooth'
+					});
+				}
+			});
 		});
 	})();
 

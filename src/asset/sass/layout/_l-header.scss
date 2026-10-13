@@ -4,6 +4,10 @@
 ---------------------------------*/
 .l-header {
 	position: relative;
+	position: sticky;
+	top: 0;
+	left: 0;
+	width: 100%;
 	background-color: #eee;
 	z-index: 10;
 
