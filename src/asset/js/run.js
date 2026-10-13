@@ -209,33 +209,39 @@ $(function(){
 		splide
 	========================= */
 	(() => {
-		const splide = new Splide( '.splide-slide', {
-			autoplay: true, // 自動再生
-			type: "loop", // ループ
-			perPage : 1, //中央に何枚表示するか
-			pauseOnHover: false, // カーソルが乗ってもスクロールを停止させない
-			pauseOnFocus: false, // 矢印をクリックしてもスクロールを停止させない
-			interval: 4000, // 自動再生の間隔
-			speed: 500, // スライダーの移動時間
-			padding: "30%", // スライダーの左右の余白
-			gap: '20px', //余白
-			focus: 'center', //中央寄せ
-			breakpoints: {
-				767: {
-					padding: "0%",
-					perPage : 1,
+		const splideElements = document.querySelectorAll('.splide-slide');
+		const loopElements = document.querySelectorAll('.loop-slide');
+
+		if(splideElements.length) {
+			const splide = new Splide( '.splide-slide', {
+				autoplay: true, // 自動再生
+				type: "loop", // ループ
+				perPage : 1, //中央に何枚表示するか
+				pauseOnHover: false, // カーソルが乗ってもスクロールを停止させない
+				pauseOnFocus: false, // 矢印をクリックしてもスクロールを停止させない
+				interval: 4000, // 自動再生の間隔
+				speed: 500, // スライダーの移動時間
+				padding: "30%", // スライダーの左右の余白
+				gap: '20px', //余白
+				focus: 'center', //中央寄せ
+				breakpoints: {
+					767: {
+						padding: "0%",
+						perPage : 1,
+					}
 				}
-			}
-		});
+			});
 
-		splide.mount();
+			splide.mount();
+		}
 
-		document.addEventListener('DOMContentLoaded', function() {
+
+		if(loopElements.length) {
 			const loopSplide = new Splide( '.loop-slide', {
 				type: "loop", // ループ
 				perPage : 3, //中央に何枚表示するか
 				arrows: false,
-				pagenation: false,
+				pagination: false,
 				autoScroll: {
 					speed: .5, // スライダーの移動時間
 					pauseOnHover: false, // カーソルが乗ってもスクロールを停止させない
@@ -244,7 +250,8 @@ $(function(){
 			});
 
 			loopSplide.mount(window.splide.Extensions);
-		});
+
+		}
 	})();
 
 	/* =========================
@@ -269,14 +276,17 @@ $(function(){
 		const modalContent = document.querySelector('.modal__content');
 		const isOpen = 'is-open';
 
-		jsModalOpen.addEventListener('click', ()=> {
-			modalContent.classList.add(isOpen);
-			modalOverlay.classList.add(isOpen);
-			modal.classList.add(isOpen);
-		});
+		if(modal) {
+			jsModalOpen.addEventListener('click', ()=> {
+				modalContent.classList.add(isOpen);
+				modalOverlay.classList.add(isOpen);
+				modal.classList.add(isOpen);
+			});
 
-		jsCloseButton.addEventListener('click', modalRemove);
-		modalOverlay.addEventListener('click', modalRemove);
+			jsCloseButton.addEventListener('click', modalRemove);
+			modalOverlay.addEventListener('click', modalRemove);
+		}
+
 
 		function modalRemove() {
 			modalContent.classList.remove(isOpen);
@@ -421,33 +431,37 @@ $(function(){
 		const isOpen = 'is-open';
 		const isStatic = 'is-static'
 
-		const blockFixed = () => {
-			const positionStart = doc.querySelector('.is-position-start');
-			const positionEnd = doc.querySelector('.is-position-end');
+		if(fixBlock) {
+			const blockFixed = () => {
+				const positionStart = doc.querySelector('.is-position-start');
+				const positionEnd = doc.querySelector('.is-position-end');
 
-			const scrollY = win.scrollY;// 現在のスクロール量
-			const positionTop = positionStart.getBoundingClientRect().top + scrollY;
-			const positionBottom = positionEnd.getBoundingClientRect().bottom;
+				const scrollY = win.scrollY;// 現在のスクロール量
+				const positionTop = positionStart.getBoundingClientRect().top + scrollY;
+				const positionBottom = positionEnd.getBoundingClientRect().bottom;
 
-			//.is-position-startの上が画面の上を過ぎたら
-			if(scrollY >= positionTop) {
-				fixBlock.classList.add(isActive);
-			} else {
-				fixBlock.classList.remove(isActive);
-				fixBlock.classList.remove(isOpen);
+				//.is-position-startの上が画面の上を過ぎたら
+				if(scrollY >= positionTop) {
+					fixBlock.classList.add(isActive);
+				} else {
+					fixBlock.classList.remove(isActive);
+					fixBlock.classList.remove(isOpen);
+				}
+
+				//.is-position-endが下が画面の下を過ぎたら
+				if(positionBottom >= win.innerHeight) {
+					fixBlock.classList.remove(isStatic);
+				} else {
+					fixBlock.classList.add(isStatic);
+				}
 			}
 
-			//.is-position-endが下が画面の下を過ぎたら
-			if(positionBottom >= win.innerHeight) {
-				fixBlock.classList.remove(isStatic);
-			} else {
-				fixBlock.classList.add(isStatic);
-			}
+			blockFixed();
+			doc.addEventListener('scroll', blockFixed);
 		}
 
-		blockFixed();
-		doc.addEventListener('scroll', blockFixed);
-})();
+	})();
+
 	/* =========================
 		media query event
 	========================= */
