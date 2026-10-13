@@ -125,13 +125,22 @@
 
 	@include mixin.tab {
 		flex-direction: row;
-		align-items: center;
     }
 }
 
 .l-header-gnav__item {
+	display: flex;
+
+	&:hover {
+		.megamenu {
+			visibility: visible;
+			opacity: 1;
+		}
+	}
+
 	a {
 		text-decoration: none;
+		align-self: center;
 
 		@include mixin.hover {
 			&:hover {
@@ -139,4 +148,17 @@
 			}
 		}
 	}
+}
+
+.megamenu {
+	width: 100vw;
+	position: absolute;
+	top: 42px;
+	left: 50%;
+	translate: -50% 0;
+	background-color: #666;
+	padding: 20px;
+	visibility: hidden;
+	opacity: 0;
+	transition: opacity var(--transition);
 }
