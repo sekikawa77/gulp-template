@@ -314,27 +314,42 @@ $(function(){
 	(() => {
 		const modalOverlay = document.querySelector('.modal__overlay');
 		const modal = document.querySelector('.modal');
-		const jsModalOpen = document.querySelector('.js-modal-open');
+		const jsModalOpen = document.querySelectorAll('.js-modal-open');
+		const modalContents = document.querySelectorAll('.modal__content');
 		const jsCloseButton = document.querySelector('.js-close-button');
-		const modalContent = document.querySelector('.modal__content');
 		const isOpen = 'is-open';
 
 		if(modal) {
-			jsModalOpen.addEventListener('click', ()=> {
-				modalContent.classList.add(isOpen);
-				modalOverlay.classList.add(isOpen);
-				modal.classList.add(isOpen);
+			jsModalOpen.forEach((link) => {
+				link.addEventListener('click', (aa)=> {
+					const dataModal = link.dataset.modal;
+					const targetModal = document.querySelector(`.modal__content[data-modal-content="${dataModal}"]`);
+
+					targetModal.classList.add(isOpen);
+					modalOverlay.classList.add(isOpen);
+					modal.classList.add(isOpen);
+				});
 			});
+
 
 			jsCloseButton.addEventListener('click', modalRemove);
 			modalOverlay.addEventListener('click', modalRemove);
-		}
 
+			function modalRemove() {
+				modalContents.forEach((modalContent) => {
+					modalContent.classList.remove(isOpen);
+					const iframe = modalContent.querySelector('iframe');
 
-		function modalRemove() {
-			modalContent.classList.remove(isOpen);
-			modalOverlay.classList.remove(isOpen);
-			modal.classList.remove(isOpen);
+					if (iframe) {
+						const src = iframe.src;
+						iframe.src = '';
+						iframe.src = src;
+					}
+				});
+
+				modalOverlay.classList.remove(isOpen);
+				modal.classList.remove(isOpen);
+			}
 		}
 	})();
 

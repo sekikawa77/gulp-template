@@ -74,8 +74,8 @@ html(lang='ja')
 
 					.l-block
 						h2.c-hdg__lv2__01.js-contents モーダル
-							p.js-modal-open モーダル開く
-
+							p(data-modal="1").js-modal-open モーダル開く 1
+							p(data-modal="2").js-modal-open モーダル開く 2
 					.l-block
 						h2.c-hdg__lv2__01.js-contents 過ぎたら表示、非表示
 						.is-position-start
@@ -491,9 +491,12 @@ html(lang='ja')
 
 		.modal
 			button(type="button" class="js-close-button") 閉じる
-			.modal__content
-				p.section__text モーダル内容
 
+			.modal__content(data-modal-content="1")
+				p.section__text モーダル内容
+			.modal__content(data-modal-content="2")
+				p.section__text
+					<iframe src="https://www.youtube.com/embed/s8OtRQkGYrA?si=y6w_ZHgpr187apzl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 		.modal__overlay
 
 
